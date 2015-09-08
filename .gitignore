@@ -1,4 +1,5 @@
 *.3dsx
 *.elf
 *.smdh
+*.cia
 build
