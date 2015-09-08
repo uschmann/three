@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09A1F2C11B9DB1DD00C0ABA9 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2B51B9DB1DD00C0ABA9 /* App.cpp */; };
+		09A1F2C21B9DB1DD00C0ABA9 /* BottomScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2B61B9DB1DD00C0ABA9 /* BottomScreen.cpp */; };
+		09A1F2C31B9DB1DD00C0ABA9 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2B71B9DB1DD00C0ABA9 /* Controller.cpp */; };
+		09A1F2C41B9DB1DD00C0ABA9 /* DefaultController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2B81B9DB1DD00C0ABA9 /* DefaultController.cpp */; };
+		09A1F2C51B9DB1DD00C0ABA9 /* HorizontalLaylout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2B91B9DB1DD00C0ABA9 /* HorizontalLaylout.cpp */; };
+		09A1F2C61B9DB1DD00C0ABA9 /* ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2BA1B9DB1DD00C0ABA9 /* ImageView.cpp */; };
+		09A1F2C71B9DB1DD00C0ABA9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2BB1B9DB1DD00C0ABA9 /* main.cpp */; };
+		09A1F2C81B9DB1DE00C0ABA9 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2BC1B9DB1DD00C0ABA9 /* Screen.cpp */; };
+		09A1F2C91B9DB1DE00C0ABA9 /* TextView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2BD1B9DB1DD00C0ABA9 /* TextView.cpp */; };
+		09A1F2CA1B9DB1DE00C0ABA9 /* VerticalLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2BE1B9DB1DD00C0ABA9 /* VerticalLayout.cpp */; };
+		09A1F2CB1B9DB1DE00C0ABA9 /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2BF1B9DB1DD00C0ABA9 /* View.cpp */; };
+		09A1F2CC1B9DB1DE00C0ABA9 /* ViewGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2C01B9DB1DD00C0ABA9 /* ViewGroup.cpp */; };
+		09A1F2CE1B9DB1E600C0ABA9 /* three.h in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2CD1B9DB1E600C0ABA9 /* three.h */; };
+		09A1F2D21B9DB2BC00C0ABA9 /* ScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2D01B9DB2BC00C0ABA9 /* ScrollView.cpp */; };
+		09A1F2D51B9DB3EE00C0ABA9 /* App.h in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2D41B9DB3EE00C0ABA9 /* App.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		09245A2D1B9E024700F57EF8 /* three-xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "three-xcode"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09A1F2B51B9DB1DD00C0ABA9 /* App.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = App.cpp; path = source/App.cpp; sourceTree = "<group>"; };
+		09A1F2B61B9DB1DD00C0ABA9 /* BottomScreen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BottomScreen.cpp; path = source/BottomScreen.cpp; sourceTree = "<group>"; };
+		09A1F2B71B9DB1DD00C0ABA9 /* Controller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Controller.cpp; path = source/Controller.cpp; sourceTree = "<group>"; };
+		09A1F2B81B9DB1DD00C0ABA9 /* DefaultController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DefaultController.cpp; path = source/DefaultController.cpp; sourceTree = "<group>"; };
+		09A1F2B91B9DB1DD00C0ABA9 /* HorizontalLaylout.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HorizontalLaylout.cpp; path = source/HorizontalLaylout.cpp; sourceTree = "<group>"; };
+		09A1F2BA1B9DB1DD00C0ABA9 /* ImageView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ImageView.cpp; path = source/ImageView.cpp; sourceTree = "<group>"; };
+		09A1F2BB1B9DB1DD00C0ABA9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = source/main.cpp; sourceTree = "<group>"; };
+		09A1F2BC1B9DB1DD00C0ABA9 /* Screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Screen.cpp; path = source/Screen.cpp; sourceTree = "<group>"; };
+		09A1F2BD1B9DB1DD00C0ABA9 /* TextView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TextView.cpp; path = source/TextView.cpp; sourceTree = "<group>"; };
+		09A1F2BE1B9DB1DD00C0ABA9 /* VerticalLayout.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalLayout.cpp; path = source/VerticalLayout.cpp; sourceTree = "<group>"; };
+		09A1F2BF1B9DB1DD00C0ABA9 /* View.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = View.cpp; path = source/View.cpp; sourceTree = "<group>"; };
+		09A1F2C01B9DB1DD00C0ABA9 /* ViewGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ViewGroup.cpp; path = source/ViewGroup.cpp; sourceTree = "<group>"; };
+		09A1F2CD1B9DB1E600C0ABA9 /* three.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = three.h; path = include/three.h; sourceTree = "<group>"; };
+		09A1F2D01B9DB2BC00C0ABA9 /* ScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScrollView.cpp; path = source/ScrollView.cpp; sourceTree = "<group>"; };
+		09A1F2D11B9DB2BC00C0ABA9 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
+		09A1F2D41B9DB3EE00C0ABA9 /* App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = App.h; path = include/App.h; sourceTree = "<group>"; };
+		09A1F2D81B9DB45600C0ABA9 /* HorizontalLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalLayout.h; sourceTree = "<group>"; };
+		09A1F2D91B9DB45600C0ABA9 /* ImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
+		09A1F2DA1B9DB45600C0ABA9 /* ScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
+		09A1F2DB1B9DB45600C0ABA9 /* TextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextView.h; sourceTree = "<group>"; };
+		09A1F2DC1B9DB45600C0ABA9 /* VerticalLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalLayout.h; sourceTree = "<group>"; };
+		09A1F2DD1B9DB45600C0ABA9 /* View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		09A1F2DE1B9DB45600C0ABA9 /* ViewGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewGroup.h; sourceTree = "<group>"; };
+		09A1F2E01B9DB51400C0ABA9 /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		09A1F2E11B9DB51400C0ABA9 /* DefaultController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultController.h; sourceTree = "<group>"; };
+		09A1F2E31B9DB53D00C0ABA9 /* TouchEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchEvent.h; sourceTree = "<group>"; };
+		09A1F2E41B9DB53D00C0ABA9 /* TouchMoveEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchMoveEvent.h; sourceTree = "<group>"; };
+		09A1F2E61B9DB58A00C0ABA9 /* TouchDownListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchDownListener.h; sourceTree = "<group>"; };
+		09A1F2E71B9DB58A00C0ABA9 /* TouchMoveListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchMoveListener.h; sourceTree = "<group>"; };
+		09A1F2E81B9DB58A00C0ABA9 /* TouchUpListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchUpListener.h; sourceTree = "<group>"; };
+		09A1F2EA1B9DB59500C0ABA9 /* BottomScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomScreen.h; sourceTree = "<group>"; };
+		09A1F2EB1B9DB59500C0ABA9 /* Screen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09A1F2521B9DAECA00C0ABA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09A1F2451B9DA9B300C0ABA9 = {
+			isa = PBXGroup;
+			children = (
+				09A1F2D31B9DB3B600C0ABA9 /* include */,
+				09A1F2CF1B9DB27C00C0ABA9 /* source */,
+				09245A2D1B9E024700F57EF8 /* three-xcode */,
+			);
+			sourceTree = "<group>";
+		};
+		09A1F2CF1B9DB27C00C0ABA9 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				09A1F2B51B9DB1DD00C0ABA9 /* App.cpp */,
+				09A1F2B61B9DB1DD00C0ABA9 /* BottomScreen.cpp */,
+				09A1F2B71B9DB1DD00C0ABA9 /* Controller.cpp */,
+				09A1F2B81B9DB1DD00C0ABA9 /* DefaultController.cpp */,
+				09A1F2B91B9DB1DD00C0ABA9 /* HorizontalLaylout.cpp */,
+				09A1F2BA1B9DB1DD00C0ABA9 /* ImageView.cpp */,
+				09A1F2BB1B9DB1DD00C0ABA9 /* main.cpp */,
+				09A1F2BC1B9DB1DD00C0ABA9 /* Screen.cpp */,
+				09A1F2BD1B9DB1DD00C0ABA9 /* TextView.cpp */,
+				09A1F2BE1B9DB1DD00C0ABA9 /* VerticalLayout.cpp */,
+				09A1F2BF1B9DB1DD00C0ABA9 /* View.cpp */,
+				09A1F2C01B9DB1DD00C0ABA9 /* ViewGroup.cpp */,
+				09A1F2D01B9DB2BC00C0ABA9 /* ScrollView.cpp */,
+			);
+			name = source;
+			sourceTree = "<group>";
+		};
+		09A1F2D31B9DB3B600C0ABA9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				09A1F2DF1B9DB51400C0ABA9 /* Controllers */,
+				09A1F2E21B9DB53D00C0ABA9 /* Events */,
+				09A1F2D71B9DB45600C0ABA9 /* Views */,
+				09A1F2E91B9DB59500C0ABA9 /* Screens */,
+				09A1F2E51B9DB58A00C0ABA9 /* Listeners */,
+				09A1F2CD1B9DB1E600C0ABA9 /* three.h */,
+				09A1F2D41B9DB3EE00C0ABA9 /* App.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		09A1F2D71B9DB45600C0ABA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09A1F2D11B9DB2BC00C0ABA9 /* ScrollView.h */,
+				09A1F2D81B9DB45600C0ABA9 /* HorizontalLayout.h */,
+				09A1F2D91B9DB45600C0ABA9 /* ImageView.h */,
+				09A1F2DA1B9DB45600C0ABA9 /* ScrollView.h */,
+				09A1F2DB1B9DB45600C0ABA9 /* TextView.h */,
+				09A1F2DC1B9DB45600C0ABA9 /* VerticalLayout.h */,
+				09A1F2DD1B9DB45600C0ABA9 /* View.h */,
+				09A1F2DE1B9DB45600C0ABA9 /* ViewGroup.h */,
+			);
+			name = Views;
+			path = include/Views;
+			sourceTree = "<group>";
+		};
+		09A1F2DF1B9DB51400C0ABA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				09A1F2E01B9DB51400C0ABA9 /* Controller.h */,
+				09A1F2E11B9DB51400C0ABA9 /* DefaultController.h */,
+			);
+			name = Controllers;
+			path = include/Controllers;
+			sourceTree = "<group>";
+		};
+		09A1F2E21B9DB53D00C0ABA9 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				09A1F2E31B9DB53D00C0ABA9 /* TouchEvent.h */,
+				09A1F2E41B9DB53D00C0ABA9 /* TouchMoveEvent.h */,
+			);
+			name = Events;
+			path = include/Events;
+			sourceTree = "<group>";
+		};
+		09A1F2E51B9DB58A00C0ABA9 /* Listeners */ = {
+			isa = PBXGroup;
+			children = (
+				09A1F2E61B9DB58A00C0ABA9 /* TouchDownListener.h */,
+				09A1F2E71B9DB58A00C0ABA9 /* TouchMoveListener.h */,
+				09A1F2E81B9DB58A00C0ABA9 /* TouchUpListener.h */,
+			);
+			name = Listeners;
+			path = include/Listeners;
+			sourceTree = "<group>";
+		};
+		09A1F2E91B9DB59500C0ABA9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				09A1F2EA1B9DB59500C0ABA9 /* BottomScreen.h */,
+				09A1F2EB1B9DB59500C0ABA9 /* Screen.h */,
+			);
+			name = Screens;
+			path = include/Screens;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		09A1F24A1B9DA9B300C0ABA9 /* three */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 09A1F24D1B9DA9B300C0ABA9 /* Build configuration list for PBXLegacyTarget "three" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/andreuschmann/homebrew/3ds/projects/three;
+			dependencies = (
+			);
+			name = three;
+			passBuildSettingsInEnvironment = 1;
+			productName = three;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		09A1F2541B9DAECA00C0ABA9 /* three-xcode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09A1F25A1B9DAECA00C0ABA9 /* Build configuration list for PBXNativeTarget "three-xcode" */;
+			buildPhases = (
+				09A1F2511B9DAECA00C0ABA9 /* Sources */,
+				09A1F2521B9DAECA00C0ABA9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "three-xcode";
+			productName = "three-xcode";
+			productReference = 09245A2D1B9E024700F57EF8 /* three-xcode */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		09A1F2461B9DA9B300C0ABA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Andre Uschmann";
+				TargetAttributes = {
+					09A1F24A1B9DA9B300C0ABA9 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					09A1F2541B9DAECA00C0ABA9 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 09A1F2491B9DA9B300C0ABA9 /* Build configuration list for PBXProject "three" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 09A1F2451B9DA9B300C0ABA9;
+			productRefGroup = 09A1F2451B9DA9B300C0ABA9;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09A1F24A1B9DA9B300C0ABA9 /* three */,
+				09A1F2541B9DAECA00C0ABA9 /* three-xcode */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09A1F2511B9DAECA00C0ABA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09A1F2D51B9DB3EE00C0ABA9 /* App.h in Sources */,
+				09A1F2CE1B9DB1E600C0ABA9 /* three.h in Sources */,
+				09A1F2D21B9DB2BC00C0ABA9 /* ScrollView.cpp in Sources */,
+				09A1F2C11B9DB1DD00C0ABA9 /* App.cpp in Sources */,
+				09A1F2C21B9DB1DD00C0ABA9 /* BottomScreen.cpp in Sources */,
+				09A1F2C31B9DB1DD00C0ABA9 /* Controller.cpp in Sources */,
+				09A1F2C41B9DB1DD00C0ABA9 /* DefaultController.cpp in Sources */,
+				09A1F2C51B9DB1DD00C0ABA9 /* HorizontalLaylout.cpp in Sources */,
+				09A1F2C61B9DB1DD00C0ABA9 /* ImageView.cpp in Sources */,
+				09A1F2C71B9DB1DD00C0ABA9 /* main.cpp in Sources */,
+				09A1F2C81B9DB1DE00C0ABA9 /* Screen.cpp in Sources */,
+				09A1F2C91B9DB1DE00C0ABA9 /* TextView.cpp in Sources */,
+				09A1F2CA1B9DB1DE00C0ABA9 /* VerticalLayout.cpp in Sources */,
+				09A1F2CB1B9DB1DE00C0ABA9 /* View.cpp in Sources */,
+				09A1F2CC1B9DB1DE00C0ABA9 /* ViewGroup.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		09A1F24B1B9DA9B300C0ABA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		09A1F24C1B9DA9B300C0ABA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		09A1F24E1B9DA9B300C0ABA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				DEVKITARM = $DEVKITPRO/devkitARM;
+				DEVKITPRO = /Users/andreuschmann/devkitPro;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		09A1F24F1B9DA9B300C0ABA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVKITARM = $DEVKITPRO/devkitARM;
+				DEVKITPRO = /Users/andreuschmann/devkitPro;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		09A1F25B1B9DAECA00C0ABA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		09A1F25C1B9DAECA00C0ABA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09A1F2491B9DA9B300C0ABA9 /* Build configuration list for PBXProject "three" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09A1F24B1B9DA9B300C0ABA9 /* Debug */,
+				09A1F24C1B9DA9B300C0ABA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09A1F24D1B9DA9B300C0ABA9 /* Build configuration list for PBXLegacyTarget "three" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09A1F24E1B9DA9B300C0ABA9 /* Debug */,
+				09A1F24F1B9DA9B300C0ABA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09A1F25A1B9DAECA00C0ABA9 /* Build configuration list for PBXNativeTarget "three-xcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09A1F25B1B9DAECA00C0ABA9 /* Debug */,
+				09A1F25C1B9DAECA00C0ABA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 09A1F2461B9DA9B300C0ABA9 /* Project object */;
+}

@@ -1,0 +1,27 @@
+#ifndef THREE_VIEW_GROUP
+#define THREE_VIEW_GROUP
+
+
+
+
+class ViewGroup:public View {
+public:
+    ViewGroup();
+    
+    virtual void onMeasure(int x, int y, int width, int height);
+    virtual void onDraw(gfxScreen_t screen, gfx3dSide_t side);
+    virtual void addChild(View *child);
+    int getNumberOfChildren();
+    
+    virtual bool onTouchDown(touchPosition *touch);
+    virtual bool onTouchUp(touchPosition *touch);
+    virtual bool onTouchMove(touchPosition *touch, int deltaX, int deltaY);
+    
+protected:
+    std::vector<View*> children;
+    
+    virtual void measureChild(View *child, int position);
+    virtual void layoutChild(View *child, int position);
+};
+
+#endif
