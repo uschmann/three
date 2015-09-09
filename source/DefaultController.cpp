@@ -15,7 +15,7 @@ void DefaultController::onCreate(App *app) {
     
     mainLayout = new VerticalLayout();
     mainLayout->setWidth(VIEW_FILL_PARENT);
-    mainLayout->setHeight(8000);
+    mainLayout->setHeight(VIEW_WRAP_CONTENT);
     mainLayout->setBackgroundColor(0xFF0000FF);
     
     mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0xFF0000FF));

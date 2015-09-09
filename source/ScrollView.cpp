@@ -42,6 +42,9 @@ bool ScrollView::onTouchMove(View *view, TouchMoveEvent *e) {
     if(scrollY < ((-1) * childHeight) + measuredHeight) {
         scrollY = ((-1) * childHeight) + measuredHeight;
     }
+    if(scrollY > 0 ) {
+        scrollY = 0;
+    }
     return true;
 }
 

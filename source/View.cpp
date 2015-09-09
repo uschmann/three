@@ -37,12 +37,7 @@ void View::onMeasure(int x, int y, int width, int height) {
             this->measuredWidth = this->paddingLeft + this->paddingRight;
             break;
         default:
-            if(this->width <= width) {
-                this->measuredWidth = this->width;
-            }
-            else {
-                this->measuredWidth = width;
-            }
+            this->measuredWidth = width;
             break;
     }
     
@@ -54,12 +49,7 @@ void View::onMeasure(int x, int y, int width, int height) {
             this->measuredHeight = this->paddingTop + this->paddingBottom;
             break;
         default:
-            if(this->measuredHeight <= height) {
-                this->measuredHeight = this->height;
-            }
-            else {
-                this->measuredHeight = height;
-            }
+            this->measuredHeight = this->height;
             break;
     }
 }
