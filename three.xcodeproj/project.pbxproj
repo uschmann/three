@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		091997431BA2D64E00D37EEA /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 091997411BA2D64E00D37EEA /* AssetManager.cpp */; };
+		093A45191BA30248007243D1 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 093A45181BA30248007243D1 /* Log.cpp */; };
 		09A1F2C11B9DB1DD00C0ABA9 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2B51B9DB1DD00C0ABA9 /* App.cpp */; };
 		09A1F2C21B9DB1DD00C0ABA9 /* BottomScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2B61B9DB1DD00C0ABA9 /* BottomScreen.cpp */; };
 		09A1F2C31B9DB1DD00C0ABA9 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2B71B9DB1DD00C0ABA9 /* Controller.cpp */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		091997411BA2D64E00D37EEA /* AssetManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AssetManager.cpp; path = source/AssetManager.cpp; sourceTree = "<group>"; };
 		09245A2D1B9E024700F57EF8 /* three-xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "three-xcode"; sourceTree = BUILT_PRODUCTS_DIR; };
+		093A45151BA30213007243D1 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Log.h; path = include/Utils/Log.h; sourceTree = "<group>"; };
+		093A45181BA30248007243D1 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = source/Log.cpp; sourceTree = "<group>"; };
 		098742E41BA2D7170007425C /* AssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetManager.h; path = include/Services/AssetManager.h; sourceTree = "<group>"; };
 		09A1F2B51B9DB1DD00C0ABA9 /* App.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = App.cpp; path = source/App.cpp; sourceTree = "<group>"; };
 		09A1F2B61B9DB1DD00C0ABA9 /* BottomScreen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BottomScreen.cpp; path = source/BottomScreen.cpp; sourceTree = "<group>"; };
@@ -82,6 +85,14 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		093A45171BA30232007243D1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				093A45151BA30213007243D1 /* Log.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		09A1F2451B9DA9B300C0ABA9 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +105,7 @@
 		09A1F2CF1B9DB27C00C0ABA9 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				093A45181BA30248007243D1 /* Log.cpp */,
 				091997411BA2D64E00D37EEA /* AssetManager.cpp */,
 				09A1F2B51B9DB1DD00C0ABA9 /* App.cpp */,
 				09A1F2B61B9DB1DD00C0ABA9 /* BottomScreen.cpp */,
@@ -115,6 +127,7 @@
 		09A1F2D31B9DB3B600C0ABA9 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				093A45171BA30232007243D1 /* Utils */,
 				091997441BA2D66F00D37EEA /* Services */,
 				09A1F2DF1B9DB51400C0ABA9 /* Controllers */,
 				09A1F2E21B9DB53D00C0ABA9 /* Events */,
@@ -263,6 +276,7 @@
 				09A1F2D51B9DB3EE00C0ABA9 /* App.h in Sources */,
 				09A1F2CE1B9DB1E600C0ABA9 /* three.h in Sources */,
 				09A1F2D21B9DB2BC00C0ABA9 /* ScrollView.cpp in Sources */,
+				093A45191BA30248007243D1 /* Log.cpp in Sources */,
 				09A1F2C11B9DB1DD00C0ABA9 /* App.cpp in Sources */,
 				09A1F2C21B9DB1DD00C0ABA9 /* BottomScreen.cpp in Sources */,
 				09A1F2C31B9DB1DD00C0ABA9 /* Controller.cpp in Sources */,

@@ -12,6 +12,10 @@
 #include <algorithm>
 #include <map>
 
+// Utils
+#include "Utils/Log.h"
+
+// Services
 #include "Services/AssetManager.h"
 
 // Events
