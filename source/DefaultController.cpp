@@ -6,8 +6,9 @@
 void DefaultController::onCreate(App *app) {
     Controller::onCreate(app);
     
-    getApp()->getAssetManager()->createTexture(0, _3dbrew_png);
-
+    getApp()->getAssetManager()->loadTexture(0, _3dbrew_png);
+    getApp()->getAssetManager()->loadFont(0, FreeSans_ttf, FreeSans_ttf_size);
+    
     scrollView = new ScrollView();
     scrollView->setWidth(VIEW_FILL_PARENT);
     scrollView->setHeight(VIEW_FILL_PARENT);
@@ -18,14 +19,8 @@ void DefaultController::onCreate(App *app) {
     mainLayout->setBackgroundColor(0xFF0000FF);
     
     mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0xFF0000FF));
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0x00FF00FF));
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0xFF0000FF));
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0x00FF00FF));
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0x00FFFFFF));
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0xFF0000FF));
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0x00FF00FF));
-    
-    //sftd_font *font = sftd_load_font_mem(FreeSans_ttf, FreeSans_ttf_size);
+    mainLayout->addChild(new View(0, 0, 100, 50, 0x00FF00FF));
+
     ImageView *imageView = new ImageView();
     imageView->setWidth(VIEW_WRAP_CONTENT);
     imageView->setHeight(VIEW_WRAP_CONTENT);
@@ -35,14 +30,12 @@ void DefaultController::onCreate(App *app) {
     scrollView->addChild(mainLayout);
     setBottomContentView(scrollView);
     
-    /*txtLog = new TextView();
+    txtLog = new TextView();
     txtLog->setWidth(VIEW_FILL_PARENT);
     txtLog->setHeight(VIEW_WRAP_CONTENT);
-    txtLog->setFont(font);
+    txtLog->setFont(getApp()->getAssetManager()->getFont(0));
     txtLog->setText("Hello World!");
-    setTopContentView(txtLog);*/
-    
-    
+    setTopContentView(txtLog);
 }
 
 void DefaultController::onFrame() {

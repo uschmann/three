@@ -12,9 +12,6 @@ void ImageView::onMeasure(int x, int y, int width, int height) {
     if(this->width == VIEW_WRAP_CONTENT) {
         measuredWidth = texture->width;
     }
-    char buffer[100];
-    sprintf(buffer, "measuredWidth: %d, measuredHeight: %d", measuredWidth, measuredHeight);
-    svcOutputDebugString(buffer, 20);
 }
 
 void ImageView::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
