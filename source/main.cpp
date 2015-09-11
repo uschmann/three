@@ -1,7 +1,7 @@
 #include "three.h"
 
 extern "C" {
-    u32 __stacksize__ = 0x40000;
+    u32 __stacksize__ = 0x400000;
 }
 
 int main()

@@ -6,9 +6,8 @@
 void DefaultController::onCreate(App *app) {
     Controller::onCreate(app);
     
-    sftd_font *font = sftd_load_font_mem(FreeSans_ttf, FreeSans_ttf_size);
-    sf2d_texture *tex = sfil_load_PNG_buffer(_3dbrew_png, SF2D_PLACE_RAM);
-    
+    getApp()->getAssetManager()->createTexture(0, _3dbrew_png);
+
     scrollView = new ScrollView();
     scrollView->setWidth(VIEW_FILL_PARENT);
     scrollView->setHeight(VIEW_FILL_PARENT);
@@ -26,30 +25,30 @@ void DefaultController::onCreate(App *app) {
     mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0xFF0000FF));
     mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0x00FF00FF));
     
-    
+    //sftd_font *font = sftd_load_font_mem(FreeSans_ttf, FreeSans_ttf_size);
     ImageView *imageView = new ImageView();
     imageView->setWidth(VIEW_WRAP_CONTENT);
     imageView->setHeight(VIEW_WRAP_CONTENT);
-    imageView->setTexture(tex);
+    imageView->setTexture(getApp()->getAssetManager()->getTexture(0));
     mainLayout->addChild(imageView);
     
     scrollView->addChild(mainLayout);
     setBottomContentView(scrollView);
     
-    txtLog = new TextView();
+    /*txtLog = new TextView();
     txtLog->setWidth(VIEW_FILL_PARENT);
     txtLog->setHeight(VIEW_WRAP_CONTENT);
     txtLog->setFont(font);
     txtLog->setText("Hello World!");
-    setTopContentView(txtLog);
+    setTopContentView(txtLog);*/
     
     
 }
 
 void DefaultController::onFrame() {
-    char buffer[100];
-    sprintf(buffer, "SCROLLY: %d, H:%d, MH:%d", scrollView->getScrollY(), scrollView->getMeasuredHeight(), mainLayout->getMeasuredHeight());
-    txtLog->setText(buffer);
+    //char buffer[100];
+    //sprintf(buffer, "SCROLLY: %d, H:%d, MH:%d", scrollView->getScrollY(), scrollView->getMeasuredHeight(), mainLayout->getMeasuredHeight());
+    //txtLog->setText(buffer);
 }
 
 bool DefaultController::onTouchDown(View *view, TouchEvent *event) {

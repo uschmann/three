@@ -10,6 +10,9 @@
 #include <vector>
 #include <stdio.h>
 #include <algorithm>
+#include <map>
+
+#include "Services/AssetManager.h"
 
 // Events
 #include "Events/TouchEvent.h"

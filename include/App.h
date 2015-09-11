@@ -15,6 +15,7 @@ public:
     void startController(Controller *controller);
     Screen *getTopScreen();
     BottomScreen *getBottomScreen();
+    AssetManager *getAssetManager();
 protected:
     App();
     
@@ -23,6 +24,7 @@ protected:
     bool isRunning;
     Screen *topScreen;
     BottomScreen *bottomScreen;
+    AssetManager *assetManager;
     Controller *currentController;
     
     void init();

@@ -15,6 +15,7 @@ void App::init() {
     this->isRunning = true;
     this->topScreen = new Screen();
     this->bottomScreen = new BottomScreen();
+    this->assetManager = new AssetManager();
 }
 
 void App::deinit() {
@@ -61,4 +62,8 @@ Screen *App::getTopScreen() {
 
 BottomScreen *App::getBottomScreen() {
     return this->bottomScreen;
+}
+
+AssetManager *App::getAssetManager() {
+    return assetManager;
 }

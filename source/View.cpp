@@ -13,6 +13,7 @@ View::View() {
     this->measuredWidth = 0;
     this->measuredHeight = 0;
     this->backgroundColor = 0;
+    setPadding(0);
     setTouchDownListener(0);
     setTouchUpListener(0);
     setTouchMoveListener(0);
