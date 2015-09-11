@@ -11,13 +11,15 @@
 
 class AssetManager {
 public:
-    sf2d_texture *loadTexture(int id, const void *buffer);
-    sf2d_texture *getTexture(int id);
-    sftd_font *loadFont(int id, const void *buffer, u32 size);
-    sftd_font *getFont(int id);
+    sf2d_texture *loadTexture(const char* id, const void *buffer);
+    sf2d_texture *loadTexture(const char* id, const char *filename);
+    sf2d_texture *getTexture(const char* id);
+    sftd_font *loadFont(const char* id, const void *buffer, u32 size);
+    sftd_font *loadFont(const char* id, const char *filename);
+    sftd_font *getFont(const char* id);
 protected:
-    std::map<int, sf2d_texture *> textures;
-    std::map<int, sftd_font *> fonts;
+    std::map<const char*, sf2d_texture *> textures;
+    std::map<const char*, sftd_font *> fonts;
 };
 
 #endif /* defined(__three__AssetManager__) */

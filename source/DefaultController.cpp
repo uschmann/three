@@ -6,8 +6,9 @@
 void DefaultController::onCreate(App *app) {
     Controller::onCreate(app);
     
-    getApp()->getAssetManager()->loadTexture(0, _3dbrew_png);
-    getApp()->getAssetManager()->loadFont(0, FreeSans_ttf, FreeSans_ttf_size);
+    getApp()->getAssetManager()->loadTexture("android", "sdmc://android.png");
+    getApp()->getAssetManager()->loadTexture("dices", "sdmc://dices.png");
+    getApp()->getAssetManager()->loadFont("font", "sdmc://Pacifico.ttf");
     
     scrollView = new ScrollView();
     scrollView->setWidth(VIEW_FILL_PARENT);
@@ -16,16 +17,30 @@ void DefaultController::onCreate(App *app) {
     mainLayout = new VerticalLayout();
     mainLayout->setWidth(VIEW_FILL_PARENT);
     mainLayout->setHeight(VIEW_WRAP_CONTENT);
-    mainLayout->setBackgroundColor(0xFF0000FF);
+    mainLayout->setBackgroundColor(0x000000FF);
     
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0xFF0000FF));
-    mainLayout->addChild(new View(0, 0, 100, 50, 0x00FF00FF));
+    
 
     ImageView *imageView = new ImageView();
-    imageView->setWidth(VIEW_WRAP_CONTENT);
-    imageView->setHeight(VIEW_WRAP_CONTENT);
-    imageView->setTexture(getApp()->getAssetManager()->getTexture(0));
+    imageView->setWidth(100);
+    imageView->setHeight(100);
+    imageView->setTexture(getApp()->getAssetManager()->getTexture("android"));
     mainLayout->addChild(imageView);
+    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 1, 0xFFFFFFFF));
+    
+    imageView = new ImageView();
+    imageView->setWidth(100);
+    imageView->setHeight(100);
+    imageView->setTexture(getApp()->getAssetManager()->getTexture("android"));
+    mainLayout->addChild(imageView);
+    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 2, 0xFFFFFFFF));
+    
+    imageView = new ImageView();
+    imageView->setWidth(100);
+    imageView->setHeight(100);
+    imageView->setTexture(getApp()->getAssetManager()->getTexture("dices"));
+    mainLayout->addChild(imageView);
+    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 2, 0xFFFFFFFF));
     
     scrollView->addChild(mainLayout);
     setBottomContentView(scrollView);
@@ -33,7 +48,8 @@ void DefaultController::onCreate(App *app) {
     txtLog = new TextView();
     txtLog->setWidth(VIEW_FILL_PARENT);
     txtLog->setHeight(VIEW_WRAP_CONTENT);
-    txtLog->setFont(getApp()->getAssetManager()->getFont(0));
+    txtLog->setFont(getApp()->getAssetManager()->getFont("font"));
+    txtLog->setTextSize(30);
     txtLog->setText("Hello World!");
     setTopContentView(txtLog);
 }
@@ -45,7 +61,6 @@ void DefaultController::onFrame() {
 }
 
 bool DefaultController::onTouchDown(View *view, TouchEvent *event) {
-
     return true;
 }
 
