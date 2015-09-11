@@ -40,7 +40,7 @@ void View::onMeasure(int x, int y, int width, int height) {
             this->measuredWidth = this->paddingLeft + this->paddingRight;
             break;
         default:
-            this->measuredWidth = width;
+            this->measuredWidth = this->width;
             break;
     }
     

@@ -26,7 +26,6 @@ protected:
     int textColor;
     int textSize;
     bool isMultiline;
-    std::vector<std::string> split(const std::string& str, int splitLength);
 };
 
 #endif

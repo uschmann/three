@@ -15,29 +15,39 @@ TextView::TextView():View() {
 
 void TextView::onMeasure(int x, int y, int width, int height) {
     View::onMeasure(x, y, width, height);
-    if(this->height == VIEW_WRAP_CONTENT) {
-        int charsPerLine = this->measuredWidth / (this->textSize/2);
-        std::vector<std::string> lines = this->split(*this->text, charsPerLine);
-        if(lines.size() == 0 || this->isMultiline == false) {
-            this->measuredHeight = this->textSize + this->paddingBottom + this->paddingTop;
+    int boundingWidth = 0;
+    int boundingHeight = 0;
+    if(isMultiline) {
+        int lineWidth = this->measuredWidth - this->paddingLeft - this->paddingRight;
+        if(lineWidth < 0) {
+            lineWidth = 0;
         }
-        else {
-            this->measuredHeight = lines.size() * this->textSize + this->paddingBottom + this->paddingTop;
-        }
+        sftd_calc_bounding_box(&boundingWidth, &boundingHeight, this->font, this->textSize, lineWidth, this->text->c_str());
     }
+    else {
+        boundingWidth = sftd_get_text_width(this->font, this->textSize, (char *)this->text->c_str());
+        boundingHeight = this->textSize;
+    }
+    if(this->height == VIEW_WRAP_CONTENT) {
+        this->measuredHeight = boundingHeight + paddingTop + paddingBottom;
+    }
+    if(this->width == VIEW_WRAP_CONTENT) {
+        this->measuredWidth = boundingWidth + paddingLeft + paddingRight;
+    }
+    Log::printf("%d, %d", measuredWidth, measuredHeight);
 }
 
 void TextView::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
     View::onDraw(screen, side);
     if(this->isMultiline) {
-        int charsPerLine = (this->measuredWidth - this->paddingLeft - this->paddingRight) / (this->textSize/2);
-        std::vector<std::string> lines = this->split(*this->text, charsPerLine);
-        for(u32 i=0; i<lines.size(); i++) {
-            sftd_draw_textf(this->font, this->measuredX + this->paddingLeft, this->measuredY + this->paddingTop + (this->textSize * i), this->textColor, this->textSize, lines[i].c_str());
+        int lineWidth = this->measuredWidth - this->paddingLeft - this->paddingRight;
+        if(lineWidth < 0) {
+            lineWidth = 0;
         }
+        sftd_draw_text_wrap(this->font, this->measuredX + this->paddingLeft, this->measuredY + this->paddingTop, this->textColor, this->textSize, lineWidth, this->text->c_str());
     }
     else {
-        sftd_draw_textf(this->font, this->measuredX + this->paddingLeft, this->measuredY + this->paddingTop, this->textColor, this->textSize, this->text->c_str());
+        sftd_draw_text(this->font, this->measuredX + this->paddingLeft, this->measuredY + this->paddingTop, this->textColor, this->textSize, this->text->c_str());
     }
 }
 
@@ -67,24 +77,4 @@ void TextView::preventLineBreak(bool prevent) {
 
 std::string TextView::getText() {
     return *this->text;
-}
-
-std::vector<std::string> TextView::split(const std::string& str, int splitLength)
-{
-    int NumSubstrings = str.length() / splitLength;
-    std::vector<std::string> ret;
-    
-    for (auto i = 0; i < NumSubstrings; i++)
-    {
-        ret.push_back(str.substr(i * splitLength, splitLength));
-    }
-    
-    // If there are leftover characters, create a shorter item at the end.
-    if (str.length() % splitLength != 0)
-    {
-        ret.push_back(str.substr(splitLength * NumSubstrings));
-    }
-    
-    
-    return ret;
 }
