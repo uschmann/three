@@ -26,7 +26,13 @@ void DefaultController::onCreate(App *app) {
     mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0xFF0000FF));
     mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 50, 0x00FF00FF));
     
-     
+    
+    ImageView *imageView = new ImageView();
+    imageView->setWidth(VIEW_WRAP_CONTENT);
+    imageView->setHeight(VIEW_WRAP_CONTENT);
+    imageView->setTexture(tex);
+    mainLayout->addChild(imageView);
+    
     scrollView->addChild(mainLayout);
     setBottomContentView(scrollView);
     
