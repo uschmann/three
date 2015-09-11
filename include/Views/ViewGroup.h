@@ -11,7 +11,9 @@ public:
     virtual void onMeasure(int x, int y, int width, int height);
     virtual void onDraw(gfxScreen_t screen, gfx3dSide_t side);
     virtual void addChild(View *child);
+    
     int getNumberOfChildren();
+    void setOverflowHidden(bool hidden);
     
     virtual bool onTouchDown(touchPosition *touch);
     virtual bool onTouchUp(touchPosition *touch);
@@ -19,7 +21,7 @@ public:
     
 protected:
     std::vector<View*> children;
-    
+    bool isOverflowHidden;
     virtual void measureChild(View *child, int position);
     virtual void layoutChild(View *child, int position);
 };

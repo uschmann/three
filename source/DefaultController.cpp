@@ -11,13 +11,14 @@ void DefaultController::onCreate(App *app) {
     getApp()->getAssetManager()->loadFont("font", "sdmc://Pacifico.ttf");
     
     scrollView = new ScrollView();
-    scrollView->setWidth(VIEW_FILL_PARENT);
-    scrollView->setHeight(VIEW_FILL_PARENT);
+    scrollView->setWidth(100);
+    scrollView->setHeight(100);
+    scrollView->setOverflowHidden(true);
     
     mainLayout = new VerticalLayout();
     mainLayout->setWidth(VIEW_FILL_PARENT);
     mainLayout->setHeight(VIEW_WRAP_CONTENT);
-    mainLayout->setBackgroundColor(0x000000FF);
+    mainLayout->setBackgroundColor(0xFFFFFFFF);
     
     
 

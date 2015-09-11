@@ -14,7 +14,6 @@ void BottomScreen::update() {
 
 void BottomScreen::drawContentView() {
     sf2d_start_frame(GFX_BOTTOM, GFX_LEFT);
-        //sf2d_set_scissor_test(GPU_SCISSOR_NORMAL, 50, 50, 50, 50);
         this->contentView->onDraw(GFX_BOTTOM, GFX_LEFT);
     sf2d_end_frame();
 }

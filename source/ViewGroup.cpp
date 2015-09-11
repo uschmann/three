@@ -4,7 +4,7 @@
  * Constructor
  */
 ViewGroup::ViewGroup():View() {
-    
+    isOverflowHidden = false;
 }
 
 void ViewGroup::onMeasure(int x, int y, int width, int height) {
@@ -18,6 +18,9 @@ void ViewGroup::onMeasure(int x, int y, int width, int height) {
 }
 
 void ViewGroup::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
+    if(isOverflowHidden) {
+        sf2d_set_scissor_test(GPU_SCISSOR_NORMAL, measuredX, measuredY, measuredWidth, measuredHeight);
+    }
     View::onDraw(screen, side);
     for(u32 i=0; i<this->children.size(); i++){
         ((View*)this->children[i])->onDraw(screen, side);
@@ -26,6 +29,10 @@ void ViewGroup::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
 
 void ViewGroup::addChild(View *child) {
     this->children.push_back(child);
+}
+
+void ViewGroup::setOverflowHidden(bool hidden) {
+    isOverflowHidden = hidden;
 }
 
 void ViewGroup::layoutChild(View *child, int position) {
