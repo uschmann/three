@@ -14,6 +14,7 @@ View::View() {
     this->measuredHeight = 0;
     this->backgroundColor = 0;
     this->backgroundNinePatch = 0;
+    this->rotation = 0;
     setPadding(0);
     setBorderWidth(0);
     setBorderColor(0);

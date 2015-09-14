@@ -72,18 +72,16 @@ void NinePatch::draw(int x, int y, int width, int height) {
     float scaleX = (width - mSliceTopLeft.width - mSliceTopRight.width);
     float scaleY = height - mSliceTopLeft.height - mSliceBottomLeft.height;
     // left side
-    sf2d_draw_texture_part(mTexture, x, y, mSliceTopLeft.x, mSliceTopLeft.y, mSliceTopLeft.width, mSliceTopLeft.height);
-    sf2d_draw_texture_part_scale(mTexture, x, mSliceMiddleLeft.y + y, mSliceMiddleLeft.x, mSliceMiddleLeft.y, mSliceMiddleLeft.width, 1, 1, scaleY);
-    sf2d_draw_texture_part(mTexture, x, y + scaleY + mSliceTopLeft.height, mSliceBottomLeft.x, mSliceBottomLeft.y, mSliceBottomLeft.width, mSliceBottomLeft.height);
+    sf2d_draw_texture_part(mTexture, x, y, mSliceTopLeft.x + 1, mSliceTopLeft.y + 1, mSliceTopLeft.width, mSliceTopLeft.height);
+    sf2d_draw_texture_part_scale(mTexture, x, mSliceMiddleLeft.y + y, mSliceMiddleLeft.x + 1, mSliceMiddleLeft.y + 1, mSliceMiddleLeft.width, 1, 1, scaleY);
+    sf2d_draw_texture_part(mTexture, x, y + scaleY + mSliceTopLeft.height, mSliceBottomLeft.x + 1, mSliceBottomLeft.y, mSliceBottomLeft.width, mSliceBottomLeft.height - 1);
     // middle
-     sf2d_draw_texture_part_scale(mTexture, x + mSliceTopLeft.width, y, mSliceTopLeft.width + 1, mSliceTopLeft.y, 1, mSliceTopLeft.height, scaleX, 1);
+     sf2d_draw_texture_part_scale(mTexture, x + mSliceTopLeft.width, y, mSliceTopLeft.width + 1, mSliceTopLeft.y + 1, 1, mSliceTopLeft.height, scaleX, 1);
     sf2d_draw_texture_part_scale(mTexture, x + mSliceMiddleLeft.width, y + mSliceMiddleLeft.y, mSliceMiddleLeft.width +1, mSliceMiddleLeft.y, 1, 1, scaleX, scaleY);
-    sf2d_draw_texture_part_scale(mTexture, x + mSliceBottomLeft.width, y + scaleY + mSliceTopLeft.height, mSliceBottomLeft.width +1, mSliceBottomLeft.y, 1, mSliceBottomLeft.height, scaleX, 1);
+    sf2d_draw_texture_part_scale(mTexture, x + mSliceBottomLeft.width, y + scaleY + mSliceTopLeft.height, mSliceBottomLeft.width +1, mSliceBottomLeft.y, 1, mSliceBottomLeft.height - 1, scaleX, 1);
     // right
-    sf2d_draw_texture_part(mTexture, x + scaleX + mSliceTopLeft.width, y, mSliceTopRight.x, mSliceTopRight.y, mSliceTopRight.width, mSliceTopRight.height);
+    sf2d_draw_texture_part(mTexture, x + scaleX + mSliceTopLeft.width, y, mSliceTopRight.x, mSliceTopRight.y + 1, mSliceTopRight.width, mSliceTopRight.height);
     sf2d_draw_texture_part_scale(mTexture, x + scaleX + mSliceTopLeft.width, y + mSliceTopRight.height, mSliceMiddleRight.x, mSliceMiddleRight.y, mSliceMiddleRight.width, 1, 1, scaleY);
-    sf2d_draw_texture_part(mTexture, x + scaleX + mSliceTopLeft.width, y + mSliceTopRight.height + scaleY, mSliceBottomRight.x, mSliceBottomRight.y, mSliceBottomRight.width, mSliceBottomRight.height);
-    Log::printf("x:%2.2f, y:%2.2f, width:%d, height:%d", scaleX, scaleY, mSliceTopRight.width, mSliceTopRight.height);
-
+    sf2d_draw_texture_part(mTexture, x + scaleX + mSliceTopLeft.width, y + mSliceTopRight.height + scaleY, mSliceBottomRight.x, mSliceBottomRight.y, mSliceBottomRight.width, mSliceBottomRight.height - 1);
 }
 

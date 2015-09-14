@@ -6,8 +6,8 @@
 void DefaultController::onCreate(App *app) {
     Controller::onCreate(app);
     
-    getApp()->getAssetManager()->loadTexture("android", "sdmc://android.png");
-    getApp()->getAssetManager()->loadTexture("dices", "sdmc://dices.png");
+    //getApp()->getAssetManager()->loadTexture("android", "sdmc://android.png");
+    //getApp()->getAssetManager()->loadTexture("dices", "sdmc://dices.png");
     getApp()->getAssetManager()->loadFont("font", "sdmc://FreeSans.ttf");
     
     scrollView = new ScrollView();
@@ -23,8 +23,8 @@ void DefaultController::onCreate(App *app) {
     View *button = new View();
     button->setBackgroundColor(0x00FF00FF);
     button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
-    button->setWidth(100);
-    button->setHeight(150);
+    button->setWidth(320);
+    button->setHeight(240);
     mainLayout->addChild(button);
     
     scrollView->addChild(mainLayout);
