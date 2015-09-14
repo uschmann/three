@@ -34,7 +34,6 @@ void TextView::onMeasure(int x, int y, int width, int height) {
     if(this->width == VIEW_WRAP_CONTENT) {
         this->measuredWidth = boundingWidth + paddingLeft + paddingRight;
     }
-    Log::printf("%d, %d", measuredWidth, measuredHeight);
 }
 
 void TextView::onDraw(gfxScreen_t screen, gfx3dSide_t side) {

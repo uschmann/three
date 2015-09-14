@@ -20,26 +20,12 @@ void DefaultController::onCreate(App *app) {
     mainLayout->setHeight(VIEW_WRAP_CONTENT);
     mainLayout->setBackgroundColor(0xFFFFFFFF);
     
-    ImageView *imageView = new ImageView();
-    imageView->setWidth(VIEW_FILL_PARENT);
-    imageView->setHeight(100);
-    imageView->setTexture(getApp()->getAssetManager()->getTexture("android"));
-    mainLayout->addChild(imageView);
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 1, 0xFFFFFFFF));
-    
-    imageView = new ImageView();
-    imageView->setWidth(VIEW_FILL_PARENT);
-    imageView->setHeight(100);
-    imageView->setTexture(getApp()->getAssetManager()->getTexture("android"));
-    mainLayout->addChild(imageView);
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 2, 0xFFFFFFFF));
-    
-    imageView = new ImageView();
-    imageView->setWidth(VIEW_FILL_PARENT);
-    imageView->setHeight(100);
-    imageView->setTexture(getApp()->getAssetManager()->getTexture("dices"));
-    mainLayout->addChild(imageView);
-    mainLayout->addChild(new View(0, 0, VIEW_FILL_PARENT, 2, 0xFFFFFFFF));
+    View *button = new View();
+    button->setBackgroundColor(0x00FF00FF);
+    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
+    button->setWidth(100);
+    button->setHeight(150);
+    mainLayout->addChild(button);
     
     scrollView->addChild(mainLayout);
     setBottomContentView(scrollView);

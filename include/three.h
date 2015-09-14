@@ -15,6 +15,9 @@
 // Utils
 #include "Utils/Log.h"
 
+// Drawable
+#include "Drawable/NinePatch.h"
+
 // Services
 #include "Services/AssetManager.h"
 

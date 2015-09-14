@@ -13,6 +13,7 @@ View::View() {
     this->measuredWidth = 0;
     this->measuredHeight = 0;
     this->backgroundColor = 0;
+    this->backgroundNinePatch = 0;
     setPadding(0);
     setBorderWidth(0);
     setBorderColor(0);
@@ -68,6 +69,9 @@ void View::onLayout(int offsetX, int offsetY) {
  */
 void View::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
     sf2d_draw_rectangle_rotate(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, this->backgroundColor, this->rotation);
+    if(this->backgroundNinePatch) {
+        this->backgroundNinePatch->draw(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight);
+    }
     if(this->borderTopWidth > 0 && this->borderTopColor != 0) {
         sf2d_draw_rectangle (this->measuredX , this->measuredY, this->measuredWidth, this->borderTopWidth, this->borderTopColor);
     }
@@ -224,6 +228,10 @@ void View::setPadding(int paddingTop, int paddingRight, int paddingBottom, int p
     this->paddingRight = paddingRight;
     this->paddingBottom = paddingBottom;
     this->paddingLeft = paddingLeft;
+}
+
+void View::setBackgroundImage(NinePatch *image) {
+    this->backgroundNinePatch = image;
 }
 
 /*********

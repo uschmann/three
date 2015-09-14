@@ -36,3 +36,13 @@ sftd_font *AssetManager::loadFont(const char* id, const char *filename) {
 sftd_font *AssetManager::getFont(const char* id) {
     return fonts[id];
 }
+
+NinePatch *AssetManager::loadNinePatch(const char* id, const void *buffer) {
+    sf2d_texture *texture = sfil_load_PNG_buffer(buffer, SF2D_PLACE_RAM);
+    ninePatches[id] = new NinePatch(texture);
+    return ninePatches[id];
+}
+
+NinePatch *AssetManager::getNinePatch(const char *id) {
+    return ninePatches[id];
+}
