@@ -19,7 +19,7 @@ struct slice {
 class NinePatch {
 public:
     NinePatch(sf2d_texture *texture);
-    void draw(int x, int y, int width, int height);
+    void draw(int x, int y, int width, int height, int tint);
 protected:
     sf2d_texture *mTexture;
     slice mSliceTopLeft;

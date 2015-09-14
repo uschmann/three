@@ -21,17 +21,48 @@ void DefaultController::onCreate(App *app) {
     mainLayout->setBackgroundColor(0xFFFFFFFF);
     
     View *button = new View();
-    button->setBackgroundColor(0x00FF00FF);
     button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
-    button->setWidth(320);
-    button->setHeight(240);
+    button->setWidth(VIEW_FILL_PARENT);
+    button->setHeight(100);
+    mainLayout->addChild(button);
+    
+    HorizontalLayout *row = new HorizontalLayout();
+    row->setWidth(VIEW_FILL_PARENT);
+    row->setHeight(VIEW_WRAP_CONTENT);
+    
+    button = new View();
+    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
+    button->setWidth(100);
+    button->setHeight(100);
+    button->setBackgroundImageTint(0xFF0000FF);
+    row->addChild(button);
+    button = new View();
+    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
+    button->setWidth(100);
+    button->setHeight(100);
+    button->setBackgroundImageTint(0x00FF00FF);
+    row->addChild(button);
+    button = new View();
+    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
+    button->setWidth(100);
+    button->setHeight(100);
+    button->setBackgroundImageTint(0x0000FFFF);
+    row->addChild(button);
+    mainLayout->addChild(row);
+    
+    button = new View();
+    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
+    button->setWidth(VIEW_FILL_PARENT);
+    button->setHeight(400);
+    button->setBackgroundImageTint(0xFF0000FF);
     mainLayout->addChild(button);
     
     scrollView->addChild(mainLayout);
     setBottomContentView(scrollView);
     
     txtLog = new TextView();
-    txtLog->setWidth(VIEW_FILL_PARENT);
+    txtLog->setWidth(100);
+    txtLog->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
     txtLog->setHeight(VIEW_WRAP_CONTENT);
     txtLog->setBackgroundColor(0xaa0000FF);
     txtLog->setFont(getApp()->getAssetManager()->getFont("font"));

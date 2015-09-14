@@ -44,6 +44,7 @@ public:
     void setPadding(int paddingTop, int paddingRight, int paddingBottom, int paddingLeft);
     void setRotation(int rotation);
     void setBackgroundImage(NinePatch *image);
+    void setBackgroundImageTint(int tint);
     
     int getX();
     int getY();
@@ -79,6 +80,7 @@ protected:
     int paddingLeft;
     float rotation;
     NinePatch *backgroundNinePatch;
+    int backgroundImageTint;
     
     TouchDownListener *touchDownListener;
     TouchUpListener *touchUpListener;
