@@ -15,6 +15,7 @@
 class Button:public View, public TouchDownListener, public TouchUpListener {
 public:
     Button();
+    ~Button();
     
     virtual void onMeasure(int x, int y, int width, int height);
     virtual void onDraw(gfxScreen_t screen, gfx3dSide_t side);
@@ -28,6 +29,7 @@ public:
     void setTextColorTouchDown(int textColorTouchDown);
     void setTextSize(int textSize);
     const char *getText();
+    void setClickListener(ClickListener *clickListener);
 protected:
     const char* mText;
     int mTextSize;
@@ -36,6 +38,7 @@ protected:
     int mBackgroundColorTouchDown;
     int mState;
     sftd_font *mFont;
+    ClickListener *mClickListener;
 };
 
 

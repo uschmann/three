@@ -20,7 +20,12 @@ void DefaultController::onCreate(App *app) {
     mainLayout->addChild(button);
     setBottomContentView(mainLayout);
     
+    View *view = new View(0, 0, VIEW_FILL_PARENT, 80, 0xAA0000FF);
+    view->setTouchDownListener(this);
+    mainLayout->addChild(view);
+    
     button = new Button();
+    button->setClickListener(this);
     button->setWidth(VIEW_FILL_PARENT);
     button->setHeight(300);
     button->setText("This is another button!!!");
@@ -33,12 +38,9 @@ void DefaultController::onCreate(App *app) {
     txtLog = new TextView();
     txtLog->setWidth(VIEW_FILL_PARENT);
     txtLog->setHeight(VIEW_FILL_PARENT);
-    txtLog->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
     txtLog->preventLineBreak(false);
-    txtLog->setTextColor(0x000000FF);
-    txtLog->setBackgroundImageTint(0xFFFF00FF);
     txtLog->setPadding(20);
-    txtLog->setText("Hello World! THREE now support 9Patch-Images!");
+    txtLog->setText("Hello World! THREE now supports 9Patch-Images!");
     setTopContentView(txtLog);
     
     getApp()->getBottomScreen()->addTouchMoveListener(this);
@@ -49,6 +51,7 @@ void DefaultController::onFrame() {
 }
 
 bool DefaultController::onTouchDown(View *view, TouchEvent *event) {
+    txtLog->setText("TouchDown");
     return true;
 }
 
@@ -57,5 +60,10 @@ bool DefaultController::onTouchMove(View *view, TouchMoveEvent *e) {
 }
 
 bool DefaultController::onTouchUp(View *view, TouchEvent *event) {
+    return true;
+}
+
+bool DefaultController::onClick(View *view) {
+    txtLog->setText("CLICK");
     return true;
 }

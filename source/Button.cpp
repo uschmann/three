@@ -16,13 +16,24 @@ Button::Button():View() {
     setBorderWidth(1, 0, 0, 0);
     setBorderColor(0xFFFFFF11);
     setBackgroundColor(0x333333FF);
-    setBackgroundColorTouchDown(0x111111FF);
+    setBackgroundColorTouchDown(0x222222FF);
     setFont(App::getInstance()->getAssetManager()->getFont("defaultFont"));
     mTextColor = 0xFFFFFFFF;
     mTextSize = 16;
     setTouchDownListener(this);
     setTouchUpListener(this);
     App::getInstance()->getBottomScreen()->addTouchUpListener(this);
+    mClickListener = NULL;
+}
+
+Button::~Button() {
+    setTouchDownListener(NULL);
+    setTouchUpListener(NULL);
+    App::getInstance()->getBottomScreen()->removeTouchUpListener(this);
+}
+
+void Button::setClickListener(ClickListener *clickListener) {
+    mClickListener = clickListener;
 }
 
 bool Button::onTouchDown(View *view, TouchEvent *event) {
@@ -31,14 +42,15 @@ bool Button::onTouchDown(View *view, TouchEvent *event) {
 }
 
 bool Button::onTouchUp(View *view, TouchEvent *event) {
-    if(view && mState == BUTTON_STATE_DOWN) {
-        Log::print("CLICK");
-        return true;
-    }
-    else {
+    if(view == this && mState == BUTTON_STATE_DOWN) {
         mState = BUTTON_STATE_DEFAULT;
-        return false;
+        if(mClickListener) {
+            mClickListener->onClick(this);
+            return true;
+        }
     }
+    mState = BUTTON_STATE_DEFAULT;
+    return false;
 }
 
 void Button::onMeasure(int x, int y, int width, int height) {
@@ -75,8 +87,9 @@ void Button::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
     }
     // draw text
     int textWidth = sftd_get_text_width(mFont, mTextSize, (char *)mText);
-    int center = (measuredWidth - paddingLeft - paddingRight) / 2;
-    sftd_draw_text(mFont, this->measuredX + this->paddingLeft + center - textWidth / 2, this->measuredY + this->paddingTop, mTextColor, mTextSize, mText);
+    int centerX = (measuredWidth - paddingLeft - paddingRight) / 2;
+    int centerY = (measuredHeight - paddingTop -paddingBottom) / 2;
+    sftd_draw_text(mFont, this->measuredX + this->paddingLeft + centerX - textWidth / 2, this->measuredY + this->paddingTop + centerY - mTextSize / 2, mTextColor, mTextSize, mText);
 }
 
 void Button::setBackgroundColorTouchDown(int backgroundColorTouchDown) {

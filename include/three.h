@@ -32,6 +32,7 @@
 #include "Listeners/TouchDownListener.h"
 #include "Listeners/TouchMoveListener.h"
 #include "Listeners/TouchUpListener.h"
+#include "Listeners/ClickListener.h"
 
 // Views
 #include "Views/View.h"
