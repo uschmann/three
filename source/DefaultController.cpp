@@ -1,8 +1,5 @@
 #include "three.h"
 
-#include "FreeSans_ttf.h"
-#include "3dbrew_png.h"
-
 void DefaultController::onCreate(App *app) {
     Controller::onCreate(app);
     
@@ -15,23 +12,26 @@ void DefaultController::onCreate(App *app) {
     mainLayout->setWidth(VIEW_FILL_PARENT);
     mainLayout->setHeight(VIEW_WRAP_CONTENT);
     
+    TextView *text = new TextView();
+    text->setWidth(VIEW_FILL_PARENT);
+    text->setHeight(300);
+    text->setText("Hello World");
+    text->setPadding(20);
+    mainLayout->addChild(text);
+    
+    
+    Slider *slider = new Slider();
+    slider->setX(0);
+    slider->setWidth(VIEW_FILL_PARENT);
+    slider->setSliderChangedListener(this);
+    mainLayout->addChild(slider);
+    
     Button *button = new Button();
-    button->setText("Click me!");
-    mainLayout->addChild(button);
-    setBottomContentView(mainLayout);
-    
-    View *view = new View(0, 0, VIEW_FILL_PARENT, 80, 0xAA0000FF);
-    view->setTouchDownListener(this);
-    mainLayout->addChild(view);
-    
-    button = new Button();
-    button->setClickListener(this);
     button->setWidth(VIEW_FILL_PARENT);
-    button->setHeight(300);
-    button->setText("This is another button!!!");
-    button->setBackgroundColor(0x123456FF);
-    
+    button->setText("Click me!");
+    button->setClickListener(this);
     mainLayout->addChild(button);
+    
     scrollView->addChild(mainLayout);
     setBottomContentView(scrollView);
     
@@ -48,6 +48,12 @@ void DefaultController::onCreate(App *app) {
 
 void DefaultController::onFrame() {
 
+}
+
+bool DefaultController::onSliderChanged(Slider *slider, int value) {
+    char buffer[100];
+    sprintf(buffer, "Value:%d", value);
+    txtLog->setText(buffer);
 }
 
 bool DefaultController::onTouchDown(View *view, TouchEvent *event) {

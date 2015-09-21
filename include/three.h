@@ -33,6 +33,7 @@
 #include "Listeners/TouchMoveListener.h"
 #include "Listeners/TouchUpListener.h"
 #include "Listeners/ClickListener.h"
+#include "Listeners/SliderChangeListener.h"
 
 // Views
 #include "Views/View.h"
@@ -43,6 +44,7 @@
 #include "Views/TextView.h"
 #include "Views/ImageView.h"
 #include "Views/Button.h"
+#include "Views/Slider.h"
 
 // Screens
 #include "Screens/Screen.h"

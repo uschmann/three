@@ -26,6 +26,7 @@
 		09A1F2D21B9DB2BC00C0ABA9 /* ScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2D01B9DB2BC00C0ABA9 /* ScrollView.cpp */; };
 		09A1F2D51B9DB3EE00C0ABA9 /* App.h in Sources */ = {isa = PBXBuildFile; fileRef = 09A1F2D41B9DB3EE00C0ABA9 /* App.h */; };
 		09BE42FF1BB071B9003B23D2 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09BE42FD1BB071B9003B23D2 /* Button.cpp */; settings = {ASSET_TAGS = (); }; };
+		09BE43041BB0914A003B23D2 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09BE43021BB0914A003B23D2 /* Slider.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,9 @@
 		09BE42FD1BB071B9003B23D2 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Button.cpp; path = source/Button.cpp; sourceTree = "<group>"; };
 		09BE43001BB071EA003B23D2 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		09BE43011BB08664003B23D2 /* ClickListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickListener.h; sourceTree = "<group>"; };
+		09BE43021BB0914A003B23D2 /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slider.cpp; path = source/Slider.cpp; sourceTree = "<group>"; };
+		09BE43051BB0917A003B23D2 /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
+		09BE43061BB09A95003B23D2 /* SliderChangeListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SliderChangeListener.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				09A1F2C01B9DB1DD00C0ABA9 /* ViewGroup.cpp */,
 				09A1F2D01B9DB2BC00C0ABA9 /* ScrollView.cpp */,
 				09BE42FD1BB071B9003B23D2 /* Button.cpp */,
+				09BE43021BB0914A003B23D2 /* Slider.cpp */,
 			);
 			name = source;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 		09A1F2D71B9DB45600C0ABA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09BE43051BB0917A003B23D2 /* Slider.h */,
 				09BE43001BB071EA003B23D2 /* Button.h */,
 				09A1F2D11B9DB2BC00C0ABA9 /* ScrollView.h */,
 				09A1F2D81B9DB45600C0ABA9 /* HorizontalLayout.h */,
@@ -202,6 +208,7 @@
 				09A1F2E71B9DB58A00C0ABA9 /* TouchMoveListener.h */,
 				09A1F2E81B9DB58A00C0ABA9 /* TouchUpListener.h */,
 				09BE43011BB08664003B23D2 /* ClickListener.h */,
+				09BE43061BB09A95003B23D2 /* SliderChangeListener.h */,
 			);
 			name = Listeners;
 			path = include/Listeners;
@@ -311,6 +318,7 @@
 				09A1F2CA1B9DB1DE00C0ABA9 /* VerticalLayout.cpp in Sources */,
 				09BE42FF1BB071B9003B23D2 /* Button.cpp in Sources */,
 				09A1F2CB1B9DB1DE00C0ABA9 /* View.cpp in Sources */,
+				09BE43041BB0914A003B23D2 /* Slider.cpp in Sources */,
 				09A1F2CC1B9DB1DE00C0ABA9 /* ViewGroup.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
