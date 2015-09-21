@@ -6,10 +6,6 @@
 void DefaultController::onCreate(App *app) {
     Controller::onCreate(app);
     
-    //getApp()->getAssetManager()->loadTexture("android", "sdmc://android.png");
-    //getApp()->getAssetManager()->loadTexture("dices", "sdmc://dices.png");
-    getApp()->getAssetManager()->loadFont("font", "sdmc://FreeSans.ttf");
-    
     scrollView = new ScrollView();
     scrollView->setWidth(VIEW_FILL_PARENT);
     scrollView->setHeight(VIEW_FILL_PARENT);
@@ -18,58 +14,34 @@ void DefaultController::onCreate(App *app) {
     mainLayout = new VerticalLayout();
     mainLayout->setWidth(VIEW_FILL_PARENT);
     mainLayout->setHeight(VIEW_WRAP_CONTENT);
-    mainLayout->setBackgroundColor(0xFFFFFFFF);
     
-    View *button = new View();
-    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
-    button->setWidth(VIEW_FILL_PARENT);
-    button->setHeight(100);
+    Button *button = new Button();
+    button->setText("Click me!");
     mainLayout->addChild(button);
+    setBottomContentView(mainLayout);
     
-    HorizontalLayout *row = new HorizontalLayout();
-    row->setWidth(VIEW_FILL_PARENT);
-    row->setHeight(VIEW_WRAP_CONTENT);
-    
-    button = new View();
-    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
-    button->setWidth(100);
-    button->setHeight(100);
-    button->setBackgroundImageTint(0xFF0000FF);
-    row->addChild(button);
-    button = new View();
-    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
-    button->setWidth(100);
-    button->setHeight(100);
-    button->setBackgroundImageTint(0x00FF00FF);
-    row->addChild(button);
-    button = new View();
-    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
-    button->setWidth(100);
-    button->setHeight(100);
-    button->setBackgroundImageTint(0x0000FFFF);
-    row->addChild(button);
-    mainLayout->addChild(row);
-    
-    button = new View();
-    button->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
+    button = new Button();
     button->setWidth(VIEW_FILL_PARENT);
-    button->setHeight(400);
-    button->setBackgroundImageTint(0xFF0000FF);
-    mainLayout->addChild(button);
+    button->setHeight(300);
+    button->setText("This is another button!!!");
+    button->setBackgroundColor(0x123456FF);
     
+    mainLayout->addChild(button);
     scrollView->addChild(mainLayout);
     setBottomContentView(scrollView);
     
     txtLog = new TextView();
-    txtLog->setWidth(100);
+    txtLog->setWidth(VIEW_FILL_PARENT);
+    txtLog->setHeight(VIEW_FILL_PARENT);
     txtLog->setBackgroundImage(getApp()->getAssetManager()->getNinePatch("button"));
-    txtLog->setHeight(VIEW_WRAP_CONTENT);
-    txtLog->setBackgroundColor(0xaa0000FF);
-    txtLog->setFont(getApp()->getAssetManager()->getFont("font"));
     txtLog->preventLineBreak(false);
-    txtLog->setTextSize(16);
-    txtLog->setText("Hello World! Lorem ipsum dolor sit amet.Hello World! Lorem ipsum dolor sit amet Hello World! Lorem ipsum dolor sit amet");
+    txtLog->setTextColor(0x000000FF);
+    txtLog->setBackgroundImageTint(0xFFFF00FF);
+    txtLog->setPadding(20);
+    txtLog->setText("Hello World! THREE now support 9Patch-Images!");
     setTopContentView(txtLog);
+    
+    getApp()->getBottomScreen()->addTouchMoveListener(this);
 }
 
 void DefaultController::onFrame() {
@@ -81,11 +53,9 @@ bool DefaultController::onTouchDown(View *view, TouchEvent *event) {
 }
 
 bool DefaultController::onTouchMove(View *view, TouchMoveEvent *e) {
-
     return true;
 }
 
 bool DefaultController::onTouchUp(View *view, TouchEvent *event) {
-
     return true;
 }

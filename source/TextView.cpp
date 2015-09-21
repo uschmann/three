@@ -6,10 +6,11 @@ TextView::TextView():View() {
     this->textSize = 16;
     this->textColor = 0xFFFFFFFF;
     this->isMultiline = true;
-    this->width = VIEW_FILL_PARENT;
+    this->width = VIEW_WRAP_CONTENT;
     this->height = VIEW_WRAP_CONTENT;
     this->x = 0;
     this->y = 0;
+    setFont(App::getInstance()->getAssetManager()->getFont("defaultFont"));
     setPadding(0);
 }
 

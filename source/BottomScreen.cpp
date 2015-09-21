@@ -53,10 +53,10 @@ void BottomScreen::dispatchTouchEvents() {
         event.screenY = touch.py;
         event.targetX = touch.px;
         event.targetY = touch.py;
+        this->contentView->onTouchUp(&touch);
         for(u32 i=0; i<touchUpListeners.size(); i++) {
             touchUpListeners[i]->onTouchUp(0, &event);
         }
-        this->contentView->onTouchUp(&touch);
         return;
     }
     if(hidKeysDown() & KEY_TOUCH) {

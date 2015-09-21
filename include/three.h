@@ -12,6 +12,9 @@
 #include <algorithm>
 #include <map>
 
+// Default assets
+#include "RobotoRegular_ttf.h"
+
 // Utils
 #include "Utils/Log.h"
 
@@ -38,6 +41,7 @@
 #include "Views/ScrollView.h"
 #include "Views/TextView.h"
 #include "Views/ImageView.h"
+#include "Views/Button.h"
 
 // Screens
 #include "Screens/Screen.h"
