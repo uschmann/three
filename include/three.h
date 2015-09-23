@@ -1,6 +1,7 @@
 #ifndef THREE
 #define THREE
 #include <3ds.h>
+#include <3ds/types.h>
 #include <sf2d.h>
 #include <sfil.h>
 #include <sftd.h>
@@ -8,7 +9,9 @@
 #include <string>
 #include <functional>
 #include <vector>
-#include <stdio.h>
+#include <cstdio>
+#include <unistd.h>
+#include <dirent.h>
 #include <algorithm>
 #include <map>
 
