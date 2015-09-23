@@ -1,1 +1,1 @@
-wine ../3dslink.exe -a 192.168.1.26 sfil_sample.3dsx
+wine ../3dslink.exe -a 192.168.1.28 sfil_sample.3dsx

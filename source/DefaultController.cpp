@@ -10,21 +10,20 @@ void DefaultController::onCreate(App *app) {
     
     mainLayout = new VerticalLayout();
     mainLayout->setWidth(VIEW_FILL_PARENT);
-    mainLayout->setHeight(VIEW_WRAP_CONTENT);
+    mainLayout->setHeight(VIEW_FILL_PARENT);
+    mainLayout->setBackgroundColor(0x111111FF);
     
-    TextView *text = new TextView();
-    text->setWidth(VIEW_FILL_PARENT);
-    text->setHeight(300);
-    text->setText("Hello World");
-    text->setPadding(20);
-    mainLayout->addChild(text);
-    
-    
-    Slider *slider = new Slider();
+    slider = new Slider();
     slider->setX(0);
     slider->setWidth(VIEW_FILL_PARENT);
     slider->setSliderChangedListener(this);
     mainLayout->addChild(slider);
+    
+    otherSlider = new Slider();
+    otherSlider->setX(0);
+    otherSlider->setColor(0xAA0000FF);
+    otherSlider->setWidth(VIEW_FILL_PARENT);
+    mainLayout->addChild(otherSlider);
     
     Button *button = new Button();
     button->setWidth(VIEW_FILL_PARENT);
@@ -32,8 +31,7 @@ void DefaultController::onCreate(App *app) {
     button->setClickListener(this);
     mainLayout->addChild(button);
     
-    scrollView->addChild(mainLayout);
-    setBottomContentView(scrollView);
+    setBottomContentView(mainLayout);
     
     txtLog = new TextView();
     txtLog->setWidth(VIEW_FILL_PARENT);
@@ -54,6 +52,7 @@ bool DefaultController::onSliderChanged(Slider *slider, int value) {
     char buffer[100];
     sprintf(buffer, "Value:%d", value);
     txtLog->setText(buffer);
+    otherSlider->setValue(value);
 }
 
 bool DefaultController::onTouchDown(View *view, TouchEvent *event) {
@@ -71,5 +70,6 @@ bool DefaultController::onTouchUp(View *view, TouchEvent *event) {
 
 bool DefaultController::onClick(View *view) {
     txtLog->setText("CLICK");
+    slider->setValue(50);
     return true;
 }

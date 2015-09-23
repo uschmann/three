@@ -14,15 +14,23 @@ public:
     Slider();
     
     void setSliderChangedListener(SliderChangeListener * sliderChangedListener);
+    int getValue();
+    void setValue(int value);
+    void setColor(int color);
+    void setSecondaryColor(int secondaryColor);
     
     virtual bool onTouchDown(View *view, TouchEvent *event);
     virtual bool onTouchUp(View *view, TouchEvent *event);
     virtual bool onTouchMove(View *view, TouchMoveEvent *event);
 protected:
-    View *mHandle;
+    ImageView *mHandle;
     View *mBar;
+    View *mBarHighlight;
     int mValue;
+    int mColor;
+    int mSecondaryColor;
     void calculateValue();
+    void calculateHandlePosition();
     SliderChangeListener *mSliderChangedListener;
 };
 

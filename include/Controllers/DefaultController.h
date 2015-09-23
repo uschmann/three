@@ -14,6 +14,8 @@ public:
     virtual bool onSliderChanged(Slider *slider, int value);
 private:
     TextView *txtLog;
+    Slider *slider;
+    Slider *otherSlider;
     VerticalLayout *mainLayout;
     ScrollView *scrollView;
 };
