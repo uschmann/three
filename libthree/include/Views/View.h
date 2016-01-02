@@ -1,5 +1,4 @@
-#ifndef THREE_VIEW
-#define THREE_VIEW
+#pragma once
 
 #define VIEW_FILL_PARENT -1
 #define VIEW_WRAP_CONTENT -2
@@ -88,5 +87,3 @@ protected:
     
     bool isTouched(touchPosition *touch);
 };
-
-#endif

@@ -16,12 +16,13 @@ void DefaultController::onCreate(App *app) {
     slider = new Slider();
     slider->setX(0);
     slider->setWidth(VIEW_FILL_PARENT);
+    slider->setHeight(100);
     slider->setSliderChangedListener(this);
     mainLayout->addChild(slider);
     
     otherSlider = new Slider();
     otherSlider->setX(0);
-    otherSlider->setColor(0xAA0000FF);
+    otherSlider->setColor(0xAABB00FF);
     otherSlider->setWidth(VIEW_FILL_PARENT);
     mainLayout->addChild(otherSlider);
     
@@ -70,6 +71,7 @@ bool DefaultController::onTouchUp(View *view, TouchEvent *event) {
 
 bool DefaultController::onClick(View *view) {
     txtLog->setText("CLICK");
+    Log::print("Click");
     slider->setValue(50);
     return true;
 }

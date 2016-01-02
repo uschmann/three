@@ -15,10 +15,6 @@
 #include <algorithm>
 #include <map>
 
-// Default assets
-#include "RobotoRegular_ttf.h"
-#include "defaultSliderHandle_png.h"
-
 // Utils
 #include "Utils/Log.h"
 

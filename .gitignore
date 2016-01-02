@@ -2,4 +2,7 @@
 *.elf
 *.smdh
 *.cia
+.cproject
+.project
+.settings
 build

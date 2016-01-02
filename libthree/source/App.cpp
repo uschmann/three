@@ -16,10 +16,6 @@ void App::init() {
     this->topScreen = new Screen();
     this->bottomScreen = new BottomScreen();
     this->assetManager = new AssetManager();
-    
-    assetManager->loadFont("defaultFont", RobotoRegular_ttf, RobotoRegular_ttf_size);
-    
-    assetManager->loadTexture("defaultSliderHandle", defaultSliderHandle_png);
 }
 
 void App::deinit() {
