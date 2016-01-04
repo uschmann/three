@@ -3,6 +3,7 @@
 
 class VerticalLayout:public ViewGroup {
 public:
+	VerticalLayout();
     virtual void onMeasure(int x, int y, int width, int height);
 protected:
     virtual void layoutChild(View *child, int position);

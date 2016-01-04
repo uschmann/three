@@ -102,7 +102,7 @@ clean:
 #---------------------------------------------------------------------------------
 install: $(BUILD)
 	@cp $(OUTPUT) $(CTRULIB)/lib
-	@cp -R include $(CTRULIB)/include/three
+	@cp -Rf include $(CTRULIB)/include/three
 	@echo "Installed!"
 
 #---------------------------------------------------------------------------------

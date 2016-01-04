@@ -1,9 +1,6 @@
 #ifndef THREE_VIEW_GROUP
 #define THREE_VIEW_GROUP
 
-
-
-
 class ViewGroup:public View {
 public:
     ViewGroup();

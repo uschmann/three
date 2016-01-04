@@ -19,11 +19,13 @@ Button::Button():View() {
     setBackgroundColorTouchDown(0x222222FF);
     setFont(App::getInstance()->getAssetManager()->getFont("defaultFont"));
     mTextColor = 0xFFFFFFFF;
+    mTextColorTouchDown = 0xFFFFFFFF;
     mTextSize = 16;
     setTouchDownListener(this);
     setTouchUpListener(this);
     App::getInstance()->getBottomScreen()->addTouchUpListener(this);
-    mClickListener = NULL;
+    mClickListener = 0;
+    mState = BUTTON_STATE_DEFAULT;
 }
 
 Button::~Button() {

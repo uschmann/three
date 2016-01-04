@@ -1,7 +1,9 @@
 #include "three.h"
 
-BottomScreen::BottomScreen() {
+BottomScreen::BottomScreen():Screen() {
     this->isTouchStarted = false;
+    this->lastTouchX = 0;
+    this->lastTouchY = 0;
 }
 
 void BottomScreen::update() {

@@ -45,6 +45,7 @@
 #include "Views/ImageView.h"
 #include "Views/Button.h"
 #include "Views/Slider.h"
+#include "Views/KeyboardView.h"
 
 // Screens
 #include "Screens/Screen.h"

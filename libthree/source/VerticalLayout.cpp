@@ -1,5 +1,9 @@
 #include "three.h"
 
+VerticalLayout::VerticalLayout():ViewGroup() {
+
+}
+
 void VerticalLayout::onMeasure(int x, int y, int width, int height) {
     ViewGroup::onMeasure(x, y, width, height);
     if(this->height == VIEW_WRAP_CONTENT) {

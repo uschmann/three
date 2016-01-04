@@ -1,7 +1,7 @@
 #include "three.h"
 
 Screen::Screen() {
-    
+    this->contentView = 0;
 }
 
 void Screen::setContentView(View *view) {
