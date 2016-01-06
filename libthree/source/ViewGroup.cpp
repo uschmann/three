@@ -5,6 +5,7 @@
  */
 ViewGroup::ViewGroup():View() {
     isOverflowHidden = false;
+    Log::print("ViewGroup()");
 }
 
 void ViewGroup::onMeasure(int x, int y, int width, int height) {

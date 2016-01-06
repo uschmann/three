@@ -22,6 +22,7 @@ View::View() {
     setTouchDownListener(0);
     setTouchUpListener(0);
     setTouchMoveListener(0);
+    Log::print("View()");
 }
 
 View::View(int x, int y, int width, int height, int backgroundColor):View() {

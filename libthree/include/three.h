@@ -34,6 +34,7 @@
 #include "Listeners/TouchUpListener.h"
 #include "Listeners/ClickListener.h"
 #include "Listeners/SliderChangeListener.h"
+#include "Listeners/KeyboardListener.h"
 
 // Views
 #include "Views/View.h"
@@ -55,6 +56,5 @@
 #include "App.h"
 
 #include "Controllers/Controller.h"
-#include "Controllers/DefaultController.h"
 
 #endif

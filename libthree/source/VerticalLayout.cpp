@@ -1,7 +1,7 @@
 #include "three.h"
 
 VerticalLayout::VerticalLayout():ViewGroup() {
-
+	Log::print("VerticalLayout()");
 }
 
 void VerticalLayout::onMeasure(int x, int y, int width, int height) {

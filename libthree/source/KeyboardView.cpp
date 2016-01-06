@@ -7,47 +7,89 @@
 #include "three.h"
 
 KeyboardView::KeyboardView():VerticalLayout() {
+	Log::print("KeyboardView()");
 
-	mFirstRow = new ViewGroup();
-	mFirstRow->setWidth(VIEW_FILL_PARENT);
-	mFirstRow->setHeight(VIEW_FILL_PARENT);
-	mFirstRow->setBackgroundColor(0xaa0000ff);
-	createButton("1", mFirstRow);
-	createButton("2", mFirstRow);
-	createButton("3", mFirstRow);
-	createButton("4", mFirstRow);
-	createButton("5", mFirstRow);
-	createButton("6", mFirstRow);
-	createButton("7", mFirstRow);
-	createButton("8", mFirstRow);
-	createButton("9", mFirstRow);
-	createButton("0", mFirstRow);
-	addChild(mFirstRow);
+	mKeyboadListener = 0;
 
-	mSecondRow = new ViewGroup();
-	/*mSecondRow = new HorizontalLayout();
-	mSecondRow->setWidth(VIEW_FILL_PARENT);
-	mSecondRow->setHeight(VIEW_FILL_PARENT);
-	mSecondRow->setBackgroundColor(0xaa0000ff);
-	createButton("q", mSecondRow);
-	createButton("w", mSecondRow);
-	createButton("e", mSecondRow);
-	createButton("r", mSecondRow);
-	createButton("t", mSecondRow);
-	createButton("z", mSecondRow);
-	createButton("u", mSecondRow);
-	createButton("i", mSecondRow);
-	createButton("o", mSecondRow);
-	createButton("p", mSecondRow);
-	addChild(mSecondRow);*/
+	HorizontalLayout *row = new HorizontalLayout();
+	row->setWidth(VIEW_FILL_PARENT);
+	row->setHeight(VIEW_WRAP_CONTENT);
+	createButton("1", row);
+	createButton("2", row);
+	createButton("3", row);
+	createButton("4", row);
+	createButton("5", row);
+	createButton("6", row);
+	createButton("7", row);
+	createButton("8", row);
+	createButton("9", row);
+	createButton("0", row);
+	createButton("=", row);
+	createButton("(", row);
+	createButton(")", row);
+	this->addChild(row);
+
+	row = new HorizontalLayout();
+	row->setWidth(VIEW_FILL_PARENT);
+	row->setHeight(VIEW_WRAP_CONTENT);
+	createButton("q", row);
+	createButton("w", row);
+	createButton("e", row);
+	createButton("r", row);
+	createButton("t", row);
+	createButton("z", row);
+	createButton("u", row);
+	createButton("i", row);
+	createButton("o", row);
+	createButton("p", row);
+	createButton("+", row);
+	createButton("{", row);
+	createButton("}", row);
+	this->addChild(row);
+
+	row = new HorizontalLayout();
+	row->setWidth(VIEW_FILL_PARENT);
+	row->setHeight(VIEW_WRAP_CONTENT);
+	createButton("a", row);
+	createButton("s", row);
+	createButton("d", row);
+	createButton("f", row);
+	createButton("g", row);
+	createButton("h", row);
+	createButton("j", row);
+	createButton("k", row);
+	createButton("l", row);
+	createButton("\~", row);
+	createButton("-", row);
+	createButton("[", row);
+	createButton("]", row);
+	this->addChild(row);
+
+	row = new HorizontalLayout();
+	row->setWidth(VIEW_FILL_PARENT);
+	row->setHeight(VIEW_WRAP_CONTENT);
+	createButton("y", row);
+	createButton("x", row);
+	createButton("c", row);
+	createButton("v", row);
+	createButton("b", row);
+	createButton("n", row);
+	createButton("m", row);
+	createButton(",", row);
+	createButton(".", row);
+	createButton(";", row);
+	createButton("*", row);
+	createButton("<", row);
+	createButton(">", row);
+	this->addChild(row);
 }
 
 void KeyboardView::createButton(const char *c, ViewGroup *container) {
-	return;
 	Button *button = new Button();
-	button->setWidth(30);
-	button->setHeight(30);
+	button->setWidth(25);
+	button->setHeight(25);
 	button->setText(c);
+	button->setTextSize(14);
 	button->setClickListener(this);
 	container->addChild(button);
 }
@@ -55,5 +97,13 @@ void KeyboardView::createButton(const char *c, ViewGroup *container) {
 bool KeyboardView::onClick(View *view) {
 	Button *button = (Button*)view;
 	Log::printf("Click: %s", button->getText());
+	if(mKeyboadListener) {
+		mKeyboadListener->onKeyPressed(this, button->getText());
+	}
 	return true;
+}
+
+
+void KeyboardView::setKeyboardListener(KeyboardListener *listener) {
+	mKeyboadListener = listener;
 }

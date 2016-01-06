@@ -14,18 +14,19 @@ Button::Button():View() {
     setHeight(VIEW_WRAP_CONTENT);
     setPadding(16);
     setBorderWidth(1, 0, 0, 0);
-    setBorderColor(0xFFFFFF11);
-    setBackgroundColor(0x333333FF);
-    setBackgroundColorTouchDown(0x222222FF);
+    setBorderColor(RGBA8(0xFF, 0xFF, 0xFF, 0x11));
+    setBackgroundColor(RGBA8(0x33, 0x33, 0x33, 0xFF));
+    setBackgroundColorTouchDown(RGBA8(0x22, 0x22, 0x22, 0xFF));
     setFont(App::getInstance()->getAssetManager()->getFont("defaultFont"));
-    mTextColor = 0xFFFFFFFF;
-    mTextColorTouchDown = 0xFFFFFFFF;
+    mTextColor = RGBA8(0xFF, 0xFF, 0xFF, 0xFF);
+    mTextColorTouchDown = RGBA8(0xFF, 0xFF, 0xFF, 0xFF);
     mTextSize = 16;
     setTouchDownListener(this);
     setTouchUpListener(this);
     App::getInstance()->getBottomScreen()->addTouchUpListener(this);
     mClickListener = 0;
     mState = BUTTON_STATE_DEFAULT;
+    Log::print("Button()");
 }
 
 Button::~Button() {

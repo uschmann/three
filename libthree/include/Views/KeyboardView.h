@@ -11,10 +11,10 @@
 class KeyboardView: public VerticalLayout, public ClickListener {
 public:
 	KeyboardView();
-	virtual bool onClick(View *view);
+	bool onClick(View *view);
+	void setKeyboardListener(KeyboardListener *listener);
 private:
-	ViewGroup *mFirstRow;
-	ViewGroup *mSecondRow;
+	KeyboardListener *mKeyboadListener;
 	void createButton(const char *c, ViewGroup *container);
 };
 

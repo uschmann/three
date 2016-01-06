@@ -2,8 +2,8 @@
 
 BottomScreen::BottomScreen():Screen() {
     this->isTouchStarted = false;
-    this->lastTouchX = 0;
-    this->lastTouchY = 0;
+    this->lastTouchX = 1;
+    this->lastTouchY = 1;
 }
 
 void BottomScreen::update() {
@@ -16,7 +16,7 @@ void BottomScreen::update() {
 
 void BottomScreen::drawContentView() {
     sf2d_start_frame(GFX_BOTTOM, GFX_LEFT);
-        this->contentView->onDraw(GFX_BOTTOM, GFX_LEFT);
+       this->contentView->onDraw(GFX_BOTTOM, GFX_LEFT);
     sf2d_end_frame();
 }
 
