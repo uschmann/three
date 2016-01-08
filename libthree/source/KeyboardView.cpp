@@ -7,10 +7,11 @@
 #include "three.h"
 
 KeyboardView::KeyboardView():VerticalLayout() {
-	Log::print("KeyboardView()");
-
 	mKeyboadListener = 0;
+	createLowerCase();
+}
 
+void KeyboardView::createLowerCase() {
 	HorizontalLayout *row = new HorizontalLayout();
 	row->setWidth(VIEW_FILL_PARENT);
 	row->setHeight(VIEW_WRAP_CONTENT);
@@ -25,8 +26,13 @@ KeyboardView::KeyboardView():VerticalLayout() {
 	createButton("9", row);
 	createButton("0", row);
 	createButton("=", row);
-	createButton("(", row);
-	createButton(")", row);
+	Button *button = new Button();
+	button->setWidth(50);
+	button->setHeight(25);
+	button->setText("<-");
+	button->setTextSize(14);
+	button->setClickListener(this);
+	row->addChild(button);
 	this->addChild(row);
 
 	row = new HorizontalLayout();
@@ -79,8 +85,26 @@ KeyboardView::KeyboardView():VerticalLayout() {
 	createButton(".", row);
 	createButton(";", row);
 	createButton("*", row);
+	createButton("(", row);
+	createButton(")", row);
+	this->addChild(row);
+
+	row = new HorizontalLayout();
+	row->setWidth(VIEW_FILL_PARENT);
+	row->setHeight(VIEW_WRAP_CONTENT);
+	createButton("\"", row);
+	createButton("'", row);
 	createButton("<", row);
 	createButton(">", row);
+	button = new Button();
+	button->setWidth(125);
+	button->setHeight(25);
+	button->setText(" ");
+	button->setTextSize(14);
+	button->setClickListener(this);
+	row->addChild(button);
+	createButton("_", row);
+	createButton("\/", row);
 	this->addChild(row);
 }
 
@@ -96,7 +120,6 @@ void KeyboardView::createButton(const char *c, ViewGroup *container) {
 
 bool KeyboardView::onClick(View *view) {
 	Button *button = (Button*)view;
-	Log::printf("Click: %s", button->getText());
 	if(mKeyboadListener) {
 		mKeyboadListener->onKeyPressed(this, button->getText());
 	}

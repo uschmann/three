@@ -15,6 +15,7 @@ public:
 	void setKeyboardListener(KeyboardListener *listener);
 private:
 	KeyboardListener *mKeyboadListener;
+	void createLowerCase();
 	void createButton(const char *c, ViewGroup *container);
 };
 
