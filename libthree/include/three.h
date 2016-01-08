@@ -23,6 +23,7 @@
 
 // Services
 #include "Services/AssetManager.h"
+#include "Services/HttpService.h"
 
 // Events
 #include "Events/TouchEvent.h"

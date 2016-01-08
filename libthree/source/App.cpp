@@ -16,6 +16,7 @@ void App::init() {
     this->topScreen = new Screen();
     this->bottomScreen = new BottomScreen();
     this->assetManager = new AssetManager();
+    this->httpService = new HttpService();
 }
 
 void App::deinit() {
@@ -66,4 +67,8 @@ BottomScreen *App::getBottomScreen() {
 
 AssetManager *App::getAssetManager() {
     return assetManager;
+}
+
+HttpService *App::getHttpService() {
+	return httpService;
 }

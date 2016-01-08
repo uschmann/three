@@ -16,6 +16,7 @@ public:
     Screen *getTopScreen();
     BottomScreen *getBottomScreen();
     AssetManager *getAssetManager();
+    HttpService *getHttpService();
 protected:
     App();
     
@@ -25,6 +26,7 @@ protected:
     Screen *topScreen;
     BottomScreen *bottomScreen;
     AssetManager *assetManager;
+    HttpService *httpService;
     Controller *currentController;
     
     void init();
