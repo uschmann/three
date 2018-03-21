@@ -10,7 +10,7 @@ TextView::TextView():View() {
     this->height = VIEW_WRAP_CONTENT;
     this->x = 0;
     this->y = 0;
-    setFont(App::getInstance()->getAssetManager()->getFont("defaultFont"));
+    // setFont(App::getInstance()->getAssetManager()->getFont("defaultFont"));
     setPadding(0);
 }
 
@@ -23,10 +23,10 @@ void TextView::onMeasure(int x, int y, int width, int height) {
         if(lineWidth < 0) {
             lineWidth = 0;
         }
-        sftd_calc_bounding_box(&boundingWidth, &boundingHeight, this->font, this->textSize, lineWidth, this->text->c_str());
+        // sftd_calc_bounding_box(&boundingWidth, &boundingHeight, this->font, this->textSize, lineWidth, this->text->c_str());
     }
     else {
-        boundingWidth = sftd_get_text_width(this->font, this->textSize, (char *)this->text->c_str());
+        // boundingWidth = sftd_get_text_width(this->font, this->textSize, (char *)this->text->c_str());
         boundingHeight = this->textSize;
     }
     if(this->height == VIEW_WRAP_CONTENT) {
@@ -44,10 +44,10 @@ void TextView::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
         if(lineWidth < 0) {
             lineWidth = 0;
         }
-        sftd_draw_text_wrap(this->font, this->measuredX + this->paddingLeft, this->measuredY + this->paddingTop, this->textColor, this->textSize, lineWidth, this->text->c_str());
+        // sftd_draw_text_wrap(this->font, this->measuredX + this->paddingLeft, this->measuredY + this->paddingTop, this->textColor, this->textSize, lineWidth, this->text->c_str());
     }
     else {
-        sftd_draw_text(this->font, this->measuredX + this->paddingLeft, this->measuredY + this->paddingTop, this->textColor, this->textSize, this->text->c_str());
+        // sftd_draw_text(this->font, this->measuredX + this->paddingLeft, this->measuredY + this->paddingTop, this->textColor, this->textSize, this->text->c_str());
     }
 }
 
@@ -59,9 +59,9 @@ void TextView::setText(string *text) {
     this->text = text;
 }
 
-void TextView::setFont(sftd_font *font) {
-    this->font = font;
-}
+// void TextView::setFont(sftd_font *font) {
+//     this->font = font;
+// }
 
 void TextView::setTextColor(int textColor) {
     this->textColor = textColor;

@@ -71,21 +71,21 @@ void View::onLayout(int offsetX, int offsetY) {
  * its content to the screen.
  */
 void View::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
-    sf2d_draw_rectangle_rotate(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, this->backgroundColor, this->rotation);
+    // sf2d_draw_rectangle_rotate(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, this->backgroundColor, this->rotation);
     if(this->backgroundNinePatch) {
         this->backgroundNinePatch->draw(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, this->backgroundImageTint);
     }
     if(this->borderTopWidth > 0 && this->borderTopColor != 0) {
-        sf2d_draw_rectangle (this->measuredX , this->measuredY, this->measuredWidth, this->borderTopWidth, this->borderTopColor);
+        // sf2d_draw_rectangle (this->measuredX , this->measuredY, this->measuredWidth, this->borderTopWidth, this->borderTopColor);
     }
     if(this->borderRightWidth > 0 && this->borderRightColor != 0) {
-        sf2d_draw_rectangle (this->measuredX + this->measuredWidth - this->borderRightWidth, this->measuredY, this->borderRightWidth, this->measuredHeight, this->borderRightColor);
+        // sf2d_draw_rectangle (this->measuredX + this->measuredWidth - this->borderRightWidth, this->measuredY, this->borderRightWidth, this->measuredHeight, this->borderRightColor);
     }
     if(this->borderBottomWidth > 0 && this->borderBottomColor != 0) {
-        sf2d_draw_rectangle (this->measuredX , this->measuredY + this->measuredHeight - this->borderBottomWidth, this->measuredWidth, this->borderBottomWidth, this->borderBottomColor);
+        // sf2d_draw_rectangle (this->measuredX , this->measuredY + this->measuredHeight - this->borderBottomWidth, this->measuredWidth, this->borderBottomWidth, this->borderBottomColor);
     }
     if(this->borderLeftWidth > 0 && this->borderLeftColor != 0) {
-        sf2d_draw_rectangle (this->measuredX , this->measuredY, this->borderLeftWidth, this->measuredHeight, this->borderLeftColor);
+        // sf2d_draw_rectangle (this->measuredX , this->measuredY, this->borderLeftWidth, this->measuredHeight, this->borderLeftColor);
     }
 }
 

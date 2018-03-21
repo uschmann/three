@@ -13,7 +13,7 @@ public:
     
     void setText(string *text);
     void setText(const char *text);
-    void setFont(sftd_font *font);
+    // void setFont(sftd_font *font);
     void setTextColor(int textColor);
     void setTextSize(int textSize);
     void preventLineBreak(bool prevent);
@@ -22,7 +22,7 @@ public:
     
 protected:
     string *text;
-    sftd_font *font;
+    // sftd_font *font;
     int textColor;
     int textSize;
     bool isMultiline;

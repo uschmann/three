@@ -18,10 +18,12 @@ struct slice {
 
 class NinePatch {
 public:
-    NinePatch(sf2d_texture *texture);
+    // NinePatch(sf2d_texture *texture);
+    NinePatch();
     void draw(int x, int y, int width, int height, int tint);
 protected:
-    sf2d_texture *mTexture;
+    // sf2d_texture *mTexture;
+    void *mTexture;
     slice mSliceTopLeft;
     slice mSliceTopRight;
     slice mSliceMiddleRight;

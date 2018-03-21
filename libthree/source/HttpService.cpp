@@ -8,7 +8,7 @@
 #include <cstring>
 
 HttpService::HttpService() {
-	httpcInit();
+	httpcInit(1024);
 }
 
 const char* HttpService::get(char *url) {
@@ -17,11 +17,11 @@ const char* HttpService::get(char *url) {
 	u8 *buf;
 	httpcContext context;
 	Result ret = 0;
-	ret = httpcOpenContext(&context, url, 1);
+	ret = httpcOpenContext(&context, HTTPC_METHOD_GET, url, 1);
 	ret = httpcBeginRequest(&context);
 	if(ret!=0)return NULL;
 
-	ret = httpcGetResponseStatusCode(&context, &statuscode, 0);
+	ret = httpcGetResponseStatusCode(&context, &statuscode);
 	if(ret!=0)return NULL;
 	if(statuscode!=200)return NULL;
 

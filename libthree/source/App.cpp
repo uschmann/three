@@ -8,9 +8,9 @@ App::App() {
 
 void App::init() {
     // init sf2dlib
-    sf2d_init();
-    sf2d_set_clear_color(RGBA8(0x00, 0x00, 0x00, 0xFF));
-    sftd_init();
+    // sf2d_init();
+    // sf2d_set_clear_color(RGBA8(0x00, 0x00, 0x00, 0xFF));
+    // sftd_init();
     
     this->isRunning = true;
     this->topScreen = new Screen();
@@ -20,7 +20,7 @@ void App::init() {
 }
 
 void App::deinit() {
-    sf2d_fini();
+    // sf2d_fini();
 }
 
 App *App::getInstance() {
@@ -48,7 +48,7 @@ void App::run() {
         
         topScreen->update();
         bottomScreen->update();
-        sf2d_swapbuffers();
+        // sf2d_swapbuffers();
     }
     deinit();
 }

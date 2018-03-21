@@ -1,5 +1,5 @@
 /*
- * HttpService.h
+ * 
  *
  *  Created on: 08.01.2016
  *      Author: andreuschmann

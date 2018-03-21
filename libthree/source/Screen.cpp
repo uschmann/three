@@ -16,7 +16,7 @@ void Screen::update() {
 }
 
 void Screen::drawContentView() {
-    sf2d_start_frame(GFX_TOP, GFX_LEFT);
+    // sf2d_start_frame(GFX_TOP, GFX_LEFT);
         this->contentView->onDraw(GFX_TOP, GFX_LEFT);
-    sf2d_end_frame();
+    // sf2d_end_frame();
 }

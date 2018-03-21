@@ -14,12 +14,12 @@ Button::Button():View() {
     setHeight(VIEW_WRAP_CONTENT);
     setPadding(16);
     setBorderWidth(1, 0, 0, 0);
-    setBorderColor(RGBA8(0xFF, 0xFF, 0xFF, 0x11));
-    setBackgroundColor(RGBA8(0x33, 0x33, 0x33, 0xFF));
-    setBackgroundColorTouchDown(RGBA8(0x22, 0x22, 0x22, 0xFF));
-    setFont(App::getInstance()->getAssetManager()->getFont("defaultFont"));
-    mTextColor = RGBA8(0xFF, 0xFF, 0xFF, 0xFF);
-    mTextColorTouchDown = RGBA8(0xFF, 0xFF, 0xFF, 0xFF);
+    setBorderColor(0xFF, 0xFF, 0xFF, 0x11);
+    setBackgroundColor(0x33);
+    setBackgroundColorTouchDown(0x22);
+    // setFont(App::getInstance()->getAssetManager()->getFont("defaultFont"));
+    mTextColor = 0xFF;
+    mTextColorTouchDown = 0xFF;
     mTextSize = 16;
     setTouchDownListener(this);
     setTouchUpListener(this);
@@ -59,7 +59,7 @@ bool Button::onTouchUp(View *view, TouchEvent *event) {
 void Button::onMeasure(int x, int y, int width, int height) {
     View::onMeasure(x, y, width, height);
     if(this->width == VIEW_WRAP_CONTENT) {
-        measuredWidth = sftd_get_text_width(mFont, mTextSize, (char *)mText) + paddingLeft + paddingRight;
+        // measuredWidth = sftd_get_text_width(mFont, mTextSize, (char *)mText) + paddingLeft + paddingRight;
     }
     if(this->height == VIEW_WRAP_CONTENT) {
         measuredHeight = mTextSize + paddingTop + paddingBottom;
@@ -72,27 +72,27 @@ void Button::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
     if(mState == BUTTON_STATE_DOWN) {
         stateColor = mBackgroundColorTouchDown;
     }
-    sf2d_draw_rectangle_rotate(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, stateColor, this->rotation);
+    // sf2d_draw_rectangle_rotate(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, stateColor, this->rotation);
     if(this->backgroundNinePatch) {
         this->backgroundNinePatch->draw(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, this->backgroundImageTint);
     }
     if(this->borderTopWidth > 0 && this->borderTopColor != 0) {
-        sf2d_draw_rectangle (this->measuredX , this->measuredY, this->measuredWidth, this->borderTopWidth, this->borderTopColor);
+        // sf2d_draw_rectangle (this->measuredX , this->measuredY, this->measuredWidth, this->borderTopWidth, this->borderTopColor);
     }
     if(this->borderRightWidth > 0 && this->borderRightColor != 0) {
-        sf2d_draw_rectangle (this->measuredX + this->measuredWidth - this->borderRightWidth, this->measuredY, this->borderRightWidth, this->measuredHeight, this->borderRightColor);
+        // sf2d_draw_rectangle (this->measuredX + this->measuredWidth - this->borderRightWidth, this->measuredY, this->borderRightWidth, this->measuredHeight, this->borderRightColor);
     }
     if(this->borderBottomWidth > 0 && this->borderBottomColor != 0) {
-        sf2d_draw_rectangle (this->measuredX , this->measuredY + this->measuredHeight - this->borderBottomWidth, this->measuredWidth, this->borderBottomWidth, this->borderBottomColor);
+        // sf2d_draw_rectangle (this->measuredX , this->measuredY + this->measuredHeight - this->borderBottomWidth, this->measuredWidth, this->borderBottomWidth, this->borderBottomColor);
     }
     if(this->borderLeftWidth > 0 && this->borderLeftColor != 0) {
-        sf2d_draw_rectangle (this->measuredX , this->measuredY, this->borderLeftWidth, this->measuredHeight, this->borderLeftColor);
+        // sf2d_draw_rectangle (this->measuredX , this->measuredY, this->borderLeftWidth, this->measuredHeight, this->borderLeftColor);
     }
     // draw text
-    int textWidth = sftd_get_text_width(mFont, mTextSize, (char *)mText);
+    // int textWidth = sftd_get_text_width(mFont, mTextSize, (char *)mText);
     int centerX = (measuredWidth - paddingLeft - paddingRight) / 2;
     int centerY = (measuredHeight - paddingTop -paddingBottom) / 2;
-    sftd_draw_text(mFont, this->measuredX + this->paddingLeft + centerX - textWidth / 2, this->measuredY + this->paddingTop + centerY - mTextSize / 2, mTextColor, mTextSize, mText);
+    // sftd_draw_text(mFont, this->measuredX + this->paddingLeft + centerX - textWidth / 2, this->measuredY + this->paddingTop + centerY - mTextSize / 2, mTextColor, mTextSize, mText);
 }
 
 void Button::setBackgroundColorTouchDown(int backgroundColorTouchDown) {
@@ -103,9 +103,9 @@ void Button::setText(const char *text) {
     mText = text;
 }
 
-void Button::setFont(sftd_font *font) {
-    mFont = font;
-}
+// void Button::setFont(sftd_font *font) {
+//     mFont = font;
+// }
 
 void Button::setTextColor(int textColor) {
     mTextColor = textColor;

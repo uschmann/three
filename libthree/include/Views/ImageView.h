@@ -8,10 +8,10 @@ public:
     virtual void onMeasure(int x, int y, int width, int height);
     virtual void onDraw(gfxScreen_t screen, gfx3dSide_t side);
     
-    void setTexture(sf2d_texture *texture);
+    // void setTexture(sf2d_texture *texture);
     void setTint(int tint);
 protected:
-    sf2d_texture *texture;
+    // sf2d_texture *texture;
     int mTint;
 };
 

@@ -30,7 +30,7 @@ Slider::Slider():ViewGroup() {
     mHandle->setHeight(VIEW_WRAP_CONTENT);
     mHandle->setWidth(VIEW_WRAP_CONTENT);
     mHandle->setTint(mColor);
-    mHandle->setTexture(App::getInstance()->getAssetManager()->getTexture("defaultSliderHandle"));
+    // mHandle->setTexture(App::getInstance()->getAssetManager()->getTexture("defaultSliderHandle"));
     mHandle->setTouchDownListener(this);
     addChild(mHandle);
 }

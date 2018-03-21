@@ -24,7 +24,7 @@ public:
     
     void setBackgroundColorTouchDown(int backgroundColorTouchDown);
     void setText(const char *text);
-    void setFont(sftd_font *font);
+    // void setFont(sftd_font *font);
     void setTextColor(int textColor);
     void setTextColorTouchDown(int textColorTouchDown);
     void setTextSize(int textSize);
@@ -37,7 +37,7 @@ protected:
     int mTextColorTouchDown;
     int mBackgroundColorTouchDown;
     int mState;
-    sftd_font *mFont;
+    // sftd_font *mFont;
     ClickListener *mClickListener;
 };
 
