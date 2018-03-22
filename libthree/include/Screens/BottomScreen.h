@@ -12,6 +12,11 @@ public:
     void removeTouchDownListener(TouchDownListener *listener);
     void removeTouchMoveListener(TouchMoveListener *listener);
     void removeTouchUpListener(TouchUpListener *listener);
+    
+    void onTouchDown(TouchEvent *event);
+    void onTouchUp(TouchEvent *event);
+    void onTouchMove(TouchMoveEvent *event);
+
 protected:
     
     int lastTouchX;

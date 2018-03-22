@@ -18,6 +18,8 @@ public:
     AssetManager *getAssetManager();
     HttpService *getHttpService();
     SDL_Surface *getSurface();
+    static int FilterEvents(const SDL_Event *event);
+    int processEvent(const SDL_Event *event);
 protected:
     App();
     

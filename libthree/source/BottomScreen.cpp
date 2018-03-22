@@ -21,6 +21,21 @@ void BottomScreen::drawContentView() {
     // sf2d_end_frame();
 }
 
+void BottomScreen::onTouchDown(TouchEvent *event) {
+
+}
+
+void BottomScreen::onTouchUp(TouchEvent *event) {
+    
+}
+
+void BottomScreen::onTouchMove(TouchMoveEvent *event) {
+    for(u32 i=0; i<touchMoveListeners.size(); i++) {
+        touchMoveListeners[i]->onTouchMove(0, event);
+    }
+   // this->contentView->onTouchMove(&touch, deltaX, deltaY);
+}
+
 void BottomScreen::dispatchTouchEvents() {
     touchPosition touch;
     hidTouchRead(&touch);
