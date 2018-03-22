@@ -20,7 +20,7 @@ public:
      */
     virtual void onMeasure(int x, int y, int width, int height);
     virtual void onLayout(int offsetX, int offsetY);
-    virtual void onDraw(gfxScreen_t screen, gfx3dSide_t side);
+    virtual void onDraw(SDL_Surface *surface);
     
     void setTouchDownListener(TouchDownListener *listener);
     void setTouchUpListener(TouchUpListener *listener);
@@ -34,7 +34,7 @@ public:
     void setY(int y);
     void setWidth(int width);
     void setHeight(int height);
-    void setBackgroundColor(int backgroundColor);
+    void setBackgroundColor(Uint32 backgroundColor);
     void setBorderColor(int color);
     void setBorderColor(int colorTop, int colorRight, int colorBottom, int colorLeft);
     void setBorderWidth(int width);
@@ -64,7 +64,7 @@ protected:
     int height;
     int measuredWidth;
     int measuredHeight;
-    int backgroundColor;
+    Uint32 backgroundColor;
     int borderTopWidth;
     int borderRightWidth;
     int borderBottomWidth;

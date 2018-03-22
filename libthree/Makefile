@@ -38,7 +38,7 @@ ASFLAGS	:=	-g $(ARCH)
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=	$(CTRULIB)
+LIBDIRS	:=	$(CTRULIB) $(PORTLIBS)
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
@@ -104,6 +104,8 @@ install: $(BUILD)
 	@rm -Rf $(CTRULIB)/include/three
 	@cp $(OUTPUT) $(CTRULIB)/lib
 	@cp -Rf include $(CTRULIB)/include/three
+	@echo Copied header files to: $(CTRULIB)/include/three
+	@cp -Rf include /Users/andreuschmann/devkitPro/portlibs/3ds/include/three
 	@echo "Installed!"
 
 #---------------------------------------------------------------------------------

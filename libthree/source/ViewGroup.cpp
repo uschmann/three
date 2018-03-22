@@ -5,7 +5,6 @@
  */
 ViewGroup::ViewGroup():View() {
     isOverflowHidden = false;
-    Log::print("ViewGroup()");
 }
 
 void ViewGroup::onMeasure(int x, int y, int width, int height) {
@@ -18,13 +17,19 @@ void ViewGroup::onMeasure(int x, int y, int width, int height) {
     }
 }
 
-void ViewGroup::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
-    if(isOverflowHidden) {
-        // sf2d_set_scissor_test(GPU_SCISSOR_NORMAL, measuredX, measuredY, measuredWidth, measuredHeight);
-    }
-    View::onDraw(screen, side);
-    for(u32 i=0; i<this->children.size(); i++){
-        ((View*)this->children[i])->onDraw(screen, side);
+void ViewGroup::onDraw(SDL_Surface *surface) {
+    View::onDraw(surface);
+    for(u32 i=0; i < this->children.size(); i++){
+        View *child = ((View*)this->children[i]);
+        SDL_Surface *childSurface = SDL_CreateRGBSurface(SDL_SWSURFACE, child->getMeasuredWidth(), child->getMeasuredHeight(), 32, 0, 0, 0, 0);
+        
+        child->onDraw(childSurface);
+
+        SDL_Rect rect;
+        rect.x = child->getX();
+        rect.y = child->getY();
+        SDL_BlitSurface(childSurface, NULL, surface, &rect);
+        SDL_FreeSurface(childSurface);
     }
 }
 

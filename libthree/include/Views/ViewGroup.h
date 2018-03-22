@@ -6,7 +6,7 @@ public:
     ViewGroup();
     
     virtual void onMeasure(int x, int y, int width, int height);
-    virtual void onDraw(gfxScreen_t screen, gfx3dSide_t side);
+    virtual void onDraw(SDL_Surface *surface);
     virtual void addChild(View *child);
     
     int getNumberOfChildren();

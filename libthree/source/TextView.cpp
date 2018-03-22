@@ -37,8 +37,8 @@ void TextView::onMeasure(int x, int y, int width, int height) {
     }
 }
 
-void TextView::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
-    View::onDraw(screen, side);
+void TextView::onDraw(SDL_Surface *suface) {
+    View::onDraw(suface);
     if(this->isMultiline) {
         int lineWidth = this->measuredWidth - this->paddingLeft - this->paddingRight;
         if(lineWidth < 0) {

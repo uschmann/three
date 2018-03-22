@@ -7,12 +7,10 @@
 //
 
 #include "three.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdarg.h>
+
 
 void Log::print(const char *msg) {
-    svcOutputDebugString(msg, strlen(msg));
+    printf(msg);
 }
 
 void Log::printf(const char *msg, ...) {
@@ -20,6 +18,6 @@ void Log::printf(const char *msg, ...) {
     va_list args;
     va_start(args, msg);
     vsnprintf(buffer, 256, msg, args);
-    svcOutputDebugString(buffer, strlen(buffer));
+    //printf(buffer);
     va_end(args);
 }

@@ -113,7 +113,6 @@ void KeyboardView::createButton(const char *c, ViewGroup *container) {
 	button->setWidth(25);
 	button->setHeight(25);
 	button->setText(c);
-	button->setTextSize(14);
 	button->setClickListener(this);
 	container->addChild(button);
 }

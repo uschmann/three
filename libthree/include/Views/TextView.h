@@ -8,7 +8,7 @@ class TextView:public View {
 public:
     TextView();
     
-    virtual void onDraw(gfxScreen_t screen, gfx3dSide_t side);
+    virtual void onDraw(SDL_Surface *surface);
     virtual void onMeasure(int x, int y, int width, int height);
     
     void setText(string *text);

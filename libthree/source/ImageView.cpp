@@ -14,8 +14,8 @@ void ImageView::onMeasure(int x, int y, int width, int height) {
     }
 }
 
-void ImageView::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
-    View::onDraw(screen, side);
+void ImageView::onDraw(SDL_Surface *surface) {
+    View::onDraw(surface);
     float w = (float) (measuredWidth - paddingLeft - paddingRight);
     // float scaleX = w/texture->width;
     

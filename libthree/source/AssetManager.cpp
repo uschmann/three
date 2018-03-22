@@ -28,14 +28,18 @@
 //     return fonts[id];
 // }
 
-// sftd_font *AssetManager::loadFont(const char* id, const char *filename) {
-//     fonts[id] = sftd_load_font_file(filename);
-//     return fonts[id];
-// }
+TTF_Font *AssetManager::loadFont(const char* id, const char *filename, int size) {
+    TTF_Font *font = TTF_OpenFont(filename, size);
+    if(font == NULL) {
+        printf(filename);
+    }
+    fonts[id] = TTF_OpenFont(filename, size);
+    return fonts[id];
+}
 
-// sftd_font *AssetManager::getFont(const char* id) {
-//     return fonts[id];
-// }
+TTF_Font *AssetManager::getFont(const char* id) {
+    return fonts[id];
+}
 
 NinePatch *AssetManager::loadNinePatch(const char* id, const void *buffer) {
     // sf2d_texture *texture = sfil_load_PNG_buffer(buffer, SF2D_PLACE_RAM);

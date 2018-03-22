@@ -7,11 +7,11 @@ App::App() {
 }
 
 void App::init() {
-    // init sf2dlib
-    // sf2d_init();
-    // sf2d_set_clear_color(RGBA8(0x00, 0x00, 0x00, 0xFF));
-    // sftd_init();
-    
+    SDL_Init(SDL_INIT_VIDEO);
+    TTF_Init();
+    romfsInit();
+
+    this->surface = SDL_SetVideoMode(400, 240 * 2, 32, SDL_SWSURFACE | SDL_DUALSCR | SDL_FITHEIGHT);
     this->isRunning = true;
     this->topScreen = new Screen();
     this->bottomScreen = new BottomScreen();
@@ -20,7 +20,7 @@ void App::init() {
 }
 
 void App::deinit() {
-    // sf2d_fini();
+    SDL_Quit();
 }
 
 App *App::getInstance() {
@@ -28,6 +28,10 @@ App *App::getInstance() {
         App::INSTANCE = new App();
     }
     return App::INSTANCE;
+}
+
+SDL_Surface *App::getSurface() {
+    return this->surface;
 }
 
 void App::startController(Controller *controller) {
@@ -48,7 +52,12 @@ void App::run() {
         
         topScreen->update();
         bottomScreen->update();
-        // sf2d_swapbuffers();
+        
+        SDL_Rect bottomRect = { 40, 240, 400, 240 };
+
+        SDL_BlitSurface(topScreen->getSurface(), NULL, this->surface, NULL);
+        SDL_BlitSurface(bottomScreen->getSurface(), NULL, this->surface, &bottomRect);
+        SDL_Flip(this->surface);
     }
     deinit();
 }

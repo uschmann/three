@@ -4,6 +4,7 @@ BottomScreen::BottomScreen():Screen() {
     this->isTouchStarted = false;
     this->lastTouchX = 1;
     this->lastTouchY = 1;
+    this->surface = SDL_CreateRGBSurface(SDL_SWSURFACE, 400, 240, 32, 0, 0, 0, 0);
 }
 
 void BottomScreen::update() {
@@ -16,7 +17,7 @@ void BottomScreen::update() {
 
 void BottomScreen::drawContentView() {
     // sf2d_start_frame(GFX_BOTTOM, GFX_LEFT);
-       this->contentView->onDraw(GFX_BOTTOM, GFX_LEFT);
+       this->contentView->onDraw(this->surface);
     // sf2d_end_frame();
 }
 

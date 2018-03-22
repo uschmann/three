@@ -17,12 +17,14 @@ public:
     BottomScreen *getBottomScreen();
     AssetManager *getAssetManager();
     HttpService *getHttpService();
+    SDL_Surface *getSurface();
 protected:
     App();
     
     static App *INSTANCE;
     
     bool isRunning;
+    SDL_Surface *surface;
     Screen *topScreen;
     BottomScreen *bottomScreen;
     AssetManager *assetManager;

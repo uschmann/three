@@ -22,7 +22,6 @@ View::View() {
     setTouchDownListener(0);
     setTouchUpListener(0);
     setTouchMoveListener(0);
-    Log::print("View()");
 }
 
 View::View(int x, int y, int width, int height, int backgroundColor):View() {
@@ -70,22 +69,28 @@ void View::onLayout(int offsetX, int offsetY) {
  * Will be called when the view should draw
  * its content to the screen.
  */
-void View::onDraw(gfxScreen_t screen, gfx3dSide_t side) {
-    // sf2d_draw_rectangle_rotate(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, this->backgroundColor, this->rotation);
-    if(this->backgroundNinePatch) {
-        this->backgroundNinePatch->draw(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, this->backgroundImageTint);
-    }
+void View::onDraw(SDL_Surface *surface) {
+    SDL_Rect rect = { 0, 0, surface->w, surface->h };
+    SDL_FillRect(surface, &rect, this->backgroundColor);
+
+    // if(this->backgroundNinePatch) {
+    //     this->backgroundNinePatch->draw(this->measuredX, this->measuredY, this->measuredWidth, this->measuredHeight, this->backgroundImageTint);
+    // }
     if(this->borderTopWidth > 0 && this->borderTopColor != 0) {
-        // sf2d_draw_rectangle (this->measuredX , this->measuredY, this->measuredWidth, this->borderTopWidth, this->borderTopColor);
+        rect = { 0, 0, surface->w, this->borderTopWidth };
+        SDL_FillRect(surface, &rect, this->borderTopColor);
     }
     if(this->borderRightWidth > 0 && this->borderRightColor != 0) {
-        // sf2d_draw_rectangle (this->measuredX + this->measuredWidth - this->borderRightWidth, this->measuredY, this->borderRightWidth, this->measuredHeight, this->borderRightColor);
+        rect = { surface->w - this->borderRightWidth, 0, this->borderRightWidth, surface->h };
+        SDL_FillRect(surface, &rect, this->borderTopColor);
     }
     if(this->borderBottomWidth > 0 && this->borderBottomColor != 0) {
-        // sf2d_draw_rectangle (this->measuredX , this->measuredY + this->measuredHeight - this->borderBottomWidth, this->measuredWidth, this->borderBottomWidth, this->borderBottomColor);
+        rect = { 0, surface->h - this->borderBottomWidth, surface->w, this->borderBottomWidth };
+        SDL_FillRect(surface, &rect, this->borderTopColor);
     }
     if(this->borderLeftWidth > 0 && this->borderLeftColor != 0) {
-        // sf2d_draw_rectangle (this->measuredX , this->measuredY, this->borderLeftWidth, this->measuredHeight, this->borderLeftColor);
+        rect = { 0, 0, this->borderLeftWidth, surface->h };
+        SDL_FillRect(surface, &rect, this->borderTopColor);
     }
 }
 
@@ -186,7 +191,7 @@ void View::setHeight(int height) {
  * Sets the background color of the view.
  * Argument is in the format 0xRRGGBBAA
  */
-void View::setBackgroundColor(int backgroundColor) {
+void View::setBackgroundColor(Uint32 backgroundColor) {
     this->backgroundColor = backgroundColor;
 }
 
