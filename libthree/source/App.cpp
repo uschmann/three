@@ -13,8 +13,8 @@ void App::init() {
     SDL_SetEventFilter(App::FilterEvents);
     romfsInit();
 
-    // this->surface = SDL_SetVideoMode(400, 240 * 2, 32, SDL_SWSURFACE | SDL_DUALSCR | SDL_FITHEIGHT);
-    this->surface = SDL_SetVideoMode(400, 240 * 2, 32, SDL_SWSURFACE | SDL_CONSOLEBOTTOM | SDL_FITHEIGHT);
+    this->surface = SDL_SetVideoMode(400, 240 * 2, 32, SDL_HWSURFACE | SDL_DUALSCR | SDL_FITHEIGHT);
+    // this->surface = SDL_SetVideoMode(400, 240 * 2, 32, SDL_SWSURFACE | SDL_CONSOLEBOTTOM | SDL_FITHEIGHT);
     this->isRunning = true;
     this->topScreen = new Screen();
     this->bottomScreen = new BottomScreen();
@@ -47,43 +47,48 @@ int App::FilterEvents(const SDL_Event *event) {
 }
 
 int App::processEvent(const SDL_Event *event) {
+    topScreen->update();
+    bottomScreen->update();
     switch(event->type) {
         case SDL_MOUSEBUTTONDOWN:
             TouchEvent touchDownEvent;
-            touchDownEvent.screenX = event->button.x;
-            touchDownEvent.screenY = event->button.y;
-            touchDownEvent.targetX = event->button.x;
-            touchDownEvent.targetY = event->button.y;
-            printf("Mouse DOWN on (%d,%d)\n", event->button.x, event->button.y);
+            touchDownEvent.screenX = event->button.x - 40;
+            touchDownEvent.screenY = event->button.y - 240;
+            touchDownEvent.targetX = event->button.x - 40;
+            touchDownEvent.targetY = event->button.y - 240;
+            this->bottomScreen->onTouchDown(&touchDownEvent);
             break;
         case SDL_MOUSEMOTION:
             TouchMoveEvent touchMoveEvent;
-            touchMoveEvent.screenX = event->motion.x;
-            touchMoveEvent.screenY = event->motion.y;
-            touchMoveEvent.targetX = event->motion.x;
-            touchMoveEvent.targetY = event->motion.y;
+            touchMoveEvent.screenX = event->motion.x - 40;
+            touchMoveEvent.screenY = event->motion.y - 240;
+            touchMoveEvent.targetX = event->motion.x - 40;
+            touchMoveEvent.targetY = event->motion.y - 240;
             touchMoveEvent.deltaX = event->motion.xrel;
             touchMoveEvent.deltaY = event->motion.yrel;
-            printf("Mouse moved to (%d,%d)\n", event->motion.x, event->motion.y);
-            printf("Mouse moved by (%d,%d)\n", event->motion.xrel, event->motion.yrel);
+            this->bottomScreen->onTouchMove(&touchMoveEvent);
             break;
         case SDL_MOUSEBUTTONUP:
             TouchEvent touchUpEvent;
-            touchUpEvent.screenX = event->button.x;
-            touchUpEvent.screenY = event->button.y;
-            touchUpEvent.targetX = event->button.x;
-            touchUpEvent.targetY = event->button.y;
-            printf("Mouse UP on (%d,%d)\n", event->button.x, event->button.y);
+            touchUpEvent.screenX = event->button.x - 40;
+            touchUpEvent.screenY = event->button.y - 240;
+            touchUpEvent.targetX = event->button.x - 40;
+            touchUpEvent.targetY = event->button.y - 240;
+            this->bottomScreen->onTouchUp(&touchUpEvent);
             break;
         default:
-            return 1;
+            break;
     }
+    topScreen->update();
+    bottomScreen->update();
     return 1;
 }
 
 void App::run() {
     SDL_Event event;
-
+    
+    topScreen->update();
+    bottomScreen->update();
     while (aptMainLoop() && this->isRunning) {
         hidScanInput();
         if (hidKeysHeld() & KEY_START) {
@@ -93,9 +98,6 @@ void App::run() {
         if(currentController) {
             currentController->onFrame();
         }
-        
-        topScreen->update();
-        bottomScreen->update();
         
         SDL_Rect bottomRect = { 40, 240, 400, 240 };
 

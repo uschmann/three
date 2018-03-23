@@ -10,30 +10,38 @@ BottomScreen::BottomScreen():Screen() {
 void BottomScreen::update() {
     if(contentView) {
         this->contentView->onMeasure(0, 0, 320, 240);
-        this->dispatchTouchEvents();
-        drawContentView();
+        this->contentView->onDraw(this->surface);
     }
 }
 
 void BottomScreen::drawContentView() {
     // sf2d_start_frame(GFX_BOTTOM, GFX_LEFT);
-       this->contentView->onDraw(this->surface);
+       
     // sf2d_end_frame();
 }
 
 void BottomScreen::onTouchDown(TouchEvent *event) {
-
+    for(u32 i=0; i<touchDownListeners.size(); i++) {
+        touchDownListeners[i]->onTouchDown(0, event);
+    }
+    touchPosition touch = { event->screenX, event->screenY };
+    this->contentView->onTouchDown(&touch);
 }
 
 void BottomScreen::onTouchUp(TouchEvent *event) {
-    
+    touchPosition touch = { event->screenX, event->screenY };
+    this->contentView->onTouchUp(&touch);
+    for(u32 i=0; i<touchUpListeners.size(); i++) {
+        touchUpListeners[i]->onTouchUp(0, event);
+    }
 }
 
 void BottomScreen::onTouchMove(TouchMoveEvent *event) {
     for(u32 i=0; i<touchMoveListeners.size(); i++) {
         touchMoveListeners[i]->onTouchMove(0, event);
     }
-   // this->contentView->onTouchMove(&touch, deltaX, deltaY);
+    touchPosition touch = { event->screenX, event->screenY };
+    this->contentView->onTouchMove(&touch, event->deltaX, event->deltaY);
 }
 
 void BottomScreen::dispatchTouchEvents() {

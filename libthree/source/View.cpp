@@ -95,8 +95,12 @@ void View::onDraw(SDL_Surface *surface) {
 }
 
 bool View::isTouched(touchPosition *touch) {
+    printf("Touch x: %d, y: %d\n", touch->px, touch->py);
+    printf("measuredX: %d, measuredY: %d\n", this->measuredX, this->measuredY);
+    printf("measuredWidth: %d, measuredHeight: %d\n\n", this->measuredWidth, this->measuredHeight);
     if(touch->px > this->measuredX && touch->px < this->measuredX + this->measuredWidth &&
        touch->py > this->measuredY && touch->py < this->measuredY + this->measuredHeight) {
+        printf("I am touched!\n");
         return true;
     }
     return false;

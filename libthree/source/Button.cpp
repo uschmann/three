@@ -12,11 +12,11 @@ Button::Button():View() {
     mText = "";
     setWidth(VIEW_WRAP_CONTENT);
     setHeight(VIEW_WRAP_CONTENT);
-    setPadding(16);
+    setPadding(8, 16, 8, 16);
     setBorderWidth(1, 0, 0, 0);
     setBorderColor(0x666666);
     setBackgroundColor(0x333333);
-    setBackgroundColorTouchDown(0x222222);
+    setBackgroundColorTouchDown(0x111111);
     setFont(App::getInstance()->getAssetManager()->getFont("defaultFont"));
     mTextColor = 0xFFFFFF;
     mTextColorTouchDown = 0xFFFFFF;
@@ -58,10 +58,12 @@ bool Button::onTouchUp(View *view, TouchEvent *event) {
 void Button::onMeasure(int x, int y, int width, int height) {
     View::onMeasure(x, y, width, height);
     if(this->width == VIEW_WRAP_CONTENT) {
-        // measuredWidth = sftd_get_text_width(mFont, mTextSize, (char *)mText) + paddingLeft + paddingRight;
+        TTF_SizeText(this->mFont, this->mText, &measuredWidth, NULL);
+        measuredWidth += paddingLeft + paddingRight;
     }
     if(this->height == VIEW_WRAP_CONTENT) {
-        measuredHeight = mTextSize + paddingTop + paddingBottom;
+        TTF_SizeText(this->mFont, this->mText, NULL, &measuredHeight);
+        measuredHeight += paddingTop + paddingBottom;
     }
 }
 
